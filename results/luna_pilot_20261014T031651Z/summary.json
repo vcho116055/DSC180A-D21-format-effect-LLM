@@ -1,0 +1,10 @@
+{
+  "trials": 20,
+  "table_trials": 16,
+  "table_all_correct": 9,
+  "fresh_request_did_not_recall": true,
+  "history_control_recalled": true,
+  "estimated_cost_usd": 0.0111276,
+  "reserved_max_cost_usd": 0.14848779999999998,
+  "results_path": "C:\\Users\\Eubin\\OneDrive\\Documents\\dsc180a project\\results\\luna_pilot_20261014T031651Z"
+}

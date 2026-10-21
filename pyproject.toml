@@ -1,0 +1,13 @@
+[project]
+name = "dsc180a-d21-format-effect-llm"
+version = "0.1.0"
+description = "Exploratory study of format effects on evidence following in LLMs"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "openai==3.35.1",
+    "python-dotenv==1.2.4",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,5 @@
+# Legacy direct-dependency list, kept for compatibility.
+# pyproject.toml and uv.lock are the environment source of truth.
+# Use uv sync --locked; this file does not lock transitive dependencies.
+openai==3.35.1
+python-dotenv==1.2.4

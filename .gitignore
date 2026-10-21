@@ -218,3 +218,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Shared experiment: credentials and local-only inputs
+.env
+.env.*
+!.env.example
+env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.zip
+data/*
+!data/README.md
+.vscode/
+
+# Trial payloads embed dataset rows; review provenance before publishing.
+results/**/trials.jsonl

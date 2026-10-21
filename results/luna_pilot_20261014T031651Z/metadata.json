@@ -1,0 +1,20 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "max_output_tokens": 8000,
+  "tools": [],
+  "store": false,
+  "seed_for_tables": 1802026,
+  "budget_usd": 0.5,
+  "source_sha256": "5c3c684032fa169dcc8b4853e06a9a5296fbb2f1b8061a5527710c418f5feac4",
+  "source_note": "First 891 local rows; provenance unverified; only ID and binary label included.",
+  "rates_per_million": {
+    "input": 0.1,
+    "output": 0.5
+  },
+  "budget_reservation_rates": {
+    "input": 0.2,
+    "output": 0.75
+  },
+  "caveat": "Exploratory, not preregistered. Token billing estimates exclude taxes."
+}
