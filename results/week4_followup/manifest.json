@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-21T19:23:20.531329+00:00",
+  "requests": 24,
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "plan_sha256": "8df778178942f72219bc090d74f04fd0f471b62b7e7746f6791cd7c0dd293de0",
+  "reservation_upper_bound_usd": 0.16775579999999995,
+  "budget_usd": 0.5,
+  "rationale": "Added after interim main results showed ceiling accuracy. Original no-table probes inherited a supplied-information-only instruction; repeat them with explicit permission to use prior knowledge. Add a single recognizable first-three-passenger block and two no-table probes. Not part of primary inference."
+}

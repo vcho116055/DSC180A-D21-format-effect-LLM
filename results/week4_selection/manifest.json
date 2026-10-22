@@ -1,0 +1,153 @@
+{
+  "created_utc": "2026-10-21T20:47:01.966269+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "system": "Answer the user task. Use only the information supplied in this request. No tools are available.",
+  "system_sha256": "bfb537fe314932263116c70d2a77e3097846d6933f3677a0d0884483db4e1cd0",
+  "seed": 18020261023,
+  "calibration_seed": 18020261024,
+  "main_requests": 520,
+  "calibration_requests": 32,
+  "blocks": [
+    {
+      "id": "titanic_80_b0",
+      "dataset": "titanic",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "titanic_80_b1",
+      "dataset": "titanic",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "titanic_400_b0",
+      "dataset": "titanic",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "titanic_400_b1",
+      "dataset": "titanic",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "redwine_80_b0",
+      "dataset": "redwine",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "redwine_80_b1",
+      "dataset": "redwine",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "redwine_400_b0",
+      "dataset": "redwine",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "redwine_400_b1",
+      "dataset": "redwine",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "medical_80_b0",
+      "dataset": "medical",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "medical_80_b1",
+      "dataset": "medical",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "medical_400_b0",
+      "dataset": "medical",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "medical_400_b1",
+      "dataset": "medical",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "synthetic_80_b0",
+      "dataset": "synthetic",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "synthetic_80_b1",
+      "dataset": "synthetic",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "synthetic_400_b0",
+      "dataset": "synthetic",
+      "n_rows": 400,
+      "attempts": 1
+    },
+    {
+      "id": "synthetic_400_b1",
+      "dataset": "synthetic",
+      "n_rows": 400,
+      "attempts": 1
+    }
+  ],
+  "calibration_blocks": [
+    {
+      "id": "titanic_80_b0",
+      "dataset": "titanic",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "redwine_80_b0",
+      "dataset": "redwine",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "medical_80_b0",
+      "dataset": "medical",
+      "n_rows": 80,
+      "attempts": 1
+    },
+    {
+      "id": "synthetic_80_b0",
+      "dataset": "synthetic",
+      "n_rows": 80,
+      "attempts": 1
+    }
+  ],
+  "source_sha256": {
+    "titanic": "5c3c684032fa169dcc8b4853e06a9a5296fbb2f1b8061a5527710c418f5feac4",
+    "redwine": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+    "medical": "388eff679557d08ac19f463d025de5e0b4adc482537c8456d19934d78621fd47"
+  },
+  "plan_sha256": {
+    "main": "7b30d07b91977b8d0727f318321f48962766c3fe61f4dfd3bd6b238ddb00ef27",
+    "calibration": "52dfbf2578310c2f4139fa465f889a335a286c7496d9ef6faf8ea4b821a0342a"
+  },
+  "reservation_upper_bound_usd": 12.387055099999992,
+  "budget_usd": 13.0,
+  "git_revision": "73d743e186029a3246bf0e7b4ed88eae4ac32c42",
+  "git_dirty": true,
+  "python": "3.11.6",
+  "tools": [],
+  "store": false,
+  "temperature": "not set",
+  "protocol_sha256": "873f9faa2bf811ae99d51a1df74678128ce6b29f4119dad415f2e20b53b02374"
+}

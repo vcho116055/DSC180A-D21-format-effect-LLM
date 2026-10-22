@@ -1,0 +1,364 @@
+{
+  "model": "gpt-5.6-luna",
+  "calibration_gate": true,
+  "batches": {
+    "calibration": {
+      "planned": 32,
+      "recorded": 32,
+      "status": {
+        "completed": 32
+      },
+      "strict_correct": 32,
+      "estimated_usd": 0.028442000000000002
+    },
+    "main": {
+      "planned": 520,
+      "recorded": 520,
+      "status": {
+        "completed": 520
+      },
+      "strict_correct": 508,
+      "estimated_usd": 1.265475
+    }
+  },
+  "primary": {
+    "attribute": {
+      "csv": {
+        "requests": 48,
+        "strict_correct": 46,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 46,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "json": {
+        "requests": 48,
+        "strict_correct": 47,
+        "present_n": 144,
+        "present_correct": 143,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "xml": {
+        "requests": 48,
+        "strict_correct": 47,
+        "present_n": 144,
+        "present_correct": 143,
+        "altered_n": 72,
+        "altered_correct": 71,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "txt": {
+        "requests": 48,
+        "strict_correct": 48,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      }
+    },
+    "join": {
+      "csv": {
+        "requests": 48,
+        "strict_correct": 48,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "json": {
+        "requests": 48,
+        "strict_correct": 48,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "xml": {
+        "requests": 48,
+        "strict_correct": 48,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 48,
+        "reversions": 0,
+        "schema_correct": 48
+      },
+      "txt": {
+        "requests": 48,
+        "strict_correct": 46,
+        "present_n": 144,
+        "present_correct": 144,
+        "altered_n": 72,
+        "altered_correct": 72,
+        "absent_n": 48,
+        "absent_correct": 46,
+        "reversions": 0,
+        "schema_correct": 48
+      }
+    }
+  },
+  "secondary": {
+    "calibration": {
+      "requests": 32,
+      "strict_correct": 32,
+      "present_n": 96,
+      "present_correct": 96,
+      "altered_n": 96,
+      "altered_correct": 96,
+      "absent_n": 32,
+      "absent_correct": 32,
+      "reversions": 0,
+      "schema_correct": 32
+    },
+    "synthetic": {
+      "requests": 64,
+      "strict_correct": 58,
+      "present_n": 192,
+      "present_correct": 187,
+      "altered_n": 96,
+      "altered_correct": 94,
+      "absent_n": 64,
+      "absent_correct": 63,
+      "reversions": 0,
+      "schema_correct": 64
+    },
+    "baseline": {
+      "requests": 48,
+      "strict_correct": 48,
+      "present_n": 144,
+      "present_correct": 144,
+      "altered_n": 144,
+      "altered_correct": 144,
+      "absent_n": 48,
+      "absent_correct": 48,
+      "reversions": 0,
+      "schema_correct": 48
+    },
+    "repeat": {
+      "requests": 24,
+      "strict_correct": 24,
+      "present_n": 72,
+      "present_correct": 72,
+      "altered_n": 72,
+      "altered_correct": 72,
+      "absent_n": 24,
+      "absent_correct": 24,
+      "reversions": 0,
+      "schema_correct": 24
+    }
+  },
+  "contrasts": {
+    "join_minus_attribute": {
+      "difference_pp": 0.3472222222222229,
+      "descriptive_95_percentile_pp": [
+        0.0,
+        0.6944444444444458
+      ],
+      "blocks": 12
+    },
+    "json_minus_csv": {
+      "difference_pp": -0.3472222222222219,
+      "descriptive_95_percentile_pp": [
+        -0.6944444444444438,
+        0.0
+      ],
+      "blocks": 12
+    },
+    "xml_minus_csv": {
+      "difference_pp": -0.3472222222222219,
+      "descriptive_95_percentile_pp": [
+        -0.6944444444444438,
+        0.0
+      ],
+      "blocks": 12
+    },
+    "txt_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 12
+    },
+    "named_minus_neutral": {
+      "difference_pp": -0.3472222222222229,
+      "descriptive_95_percentile_pp": [
+        -0.6944444444444458,
+        0.0
+      ],
+      "blocks": 12
+    },
+    "altered_minus_original": {
+      "difference_pp": 0.0,
+      "descriptive_95_percentile_pp": [
+        -0.3472222222222229,
+        0.3472222222222229
+      ],
+      "blocks": 12
+    }
+  },
+  "primary_total": {
+    "requests": 384,
+    "strict_correct": 378,
+    "present_n": 1152,
+    "present_correct": 1150,
+    "altered_n": 576,
+    "altered_correct": 575,
+    "absent_n": 384,
+    "absent_correct": 380,
+    "reversions": 0,
+    "schema_correct": 384
+  },
+  "by_dataset": {
+    "medical": {
+      "requests": 128,
+      "strict_correct": 126,
+      "present_n": 384,
+      "present_correct": 384,
+      "altered_n": 192,
+      "altered_correct": 192,
+      "absent_n": 128,
+      "absent_correct": 126,
+      "reversions": 0,
+      "schema_correct": 128
+    },
+    "redwine": {
+      "requests": 128,
+      "strict_correct": 125,
+      "present_n": 384,
+      "present_correct": 383,
+      "altered_n": 192,
+      "altered_correct": 191,
+      "absent_n": 128,
+      "absent_correct": 126,
+      "reversions": 0,
+      "schema_correct": 128
+    },
+    "titanic": {
+      "requests": 128,
+      "strict_correct": 127,
+      "present_n": 384,
+      "present_correct": 383,
+      "altered_n": 192,
+      "altered_correct": 192,
+      "absent_n": 128,
+      "absent_correct": 128,
+      "reversions": 0,
+      "schema_correct": 128
+    }
+  },
+  "by_n_rows": {
+    "80": {
+      "requests": 192,
+      "strict_correct": 192,
+      "present_n": 576,
+      "present_correct": 576,
+      "altered_n": 288,
+      "altered_correct": 288,
+      "absent_n": 192,
+      "absent_correct": 192,
+      "reversions": 0,
+      "schema_correct": 192
+    },
+    "400": {
+      "requests": 192,
+      "strict_correct": 186,
+      "present_n": 576,
+      "present_correct": 574,
+      "altered_n": 288,
+      "altered_correct": 287,
+      "absent_n": 192,
+      "absent_correct": 188,
+      "reversions": 0,
+      "schema_correct": 192
+    }
+  },
+  "by_cue": {
+    "named": {
+      "requests": 192,
+      "strict_correct": 190,
+      "present_n": 576,
+      "present_correct": 574,
+      "altered_n": 288,
+      "altered_correct": 287,
+      "absent_n": 192,
+      "absent_correct": 192,
+      "reversions": 0,
+      "schema_correct": 192
+    },
+    "neutral": {
+      "requests": 192,
+      "strict_correct": 188,
+      "present_n": 576,
+      "present_correct": 576,
+      "altered_n": 288,
+      "altered_correct": 288,
+      "absent_n": 192,
+      "absent_correct": 188,
+      "reversions": 0,
+      "schema_correct": 192
+    }
+  },
+  "by_version": {
+    "altered": {
+      "requests": 192,
+      "strict_correct": 189,
+      "present_n": 576,
+      "present_correct": 575,
+      "altered_n": 576,
+      "altered_correct": 575,
+      "absent_n": 192,
+      "absent_correct": 190,
+      "reversions": 0,
+      "schema_correct": 192
+    },
+    "original": {
+      "requests": 192,
+      "strict_correct": 189,
+      "present_n": 576,
+      "present_correct": 575,
+      "altered_n": 0,
+      "altered_correct": 0,
+      "absent_n": 192,
+      "absent_correct": 190,
+      "reversions": 0,
+      "schema_correct": 192
+    }
+  },
+  "error_categories": {
+    "false_not_found": 6,
+    "answer_for_absent_query": 5,
+    "other_supplied_value": 1
+  },
+  "publication_note": "Aggregate-only export of the original analysis; row-level failures are withheld. Historical source analysis is unchanged.",
+  "source_analysis_sha256": "0a3c9e80be7f122e1bc00992f603922756bd3ace641c56616585d36dab493688",
+  "excluded_fields": [
+    "failures"
+  ]
+}

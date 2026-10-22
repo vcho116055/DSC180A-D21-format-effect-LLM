@@ -1,0 +1,302 @@
+{
+  "planned": 358,
+  "requests": 358,
+  "status": {
+    "completed": 352,
+    "incomplete": 6
+  },
+  "returned_models": [
+    "gpt-5.6-luna"
+  ],
+  "stages": {
+    "arithmetic": {
+      "requests": 12,
+      "all_correct": 9,
+      "cells": 24,
+      "correct": 19
+    },
+    "main": {
+      "requests": 288,
+      "all_correct": 288,
+      "cells": 864,
+      "correct": 864
+    },
+    "prior": {
+      "requests": 6,
+      "all_correct": 0,
+      "cells": 18,
+      "correct": 0
+    },
+    "repeat": {
+      "requests": 12,
+      "all_correct": 12,
+      "cells": 36,
+      "correct": 36
+    },
+    "stress": {
+      "requests": 16,
+      "all_correct": 16,
+      "cells": 48,
+      "correct": 48
+    },
+    "synthetic": {
+      "requests": 24,
+      "all_correct": 24,
+      "cells": 72,
+      "correct": 72
+    }
+  },
+  "primary_by_format": {
+    "csv": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "json": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "txt": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "xml": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    }
+  },
+  "primary_by_dataset": {
+    "medical": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    },
+    "redwine": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    },
+    "titanic": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    }
+  },
+  "primary_by_size": {
+    "40": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    },
+    "200": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    }
+  },
+  "primary_by_cue": {
+    "named": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    },
+    "neutral": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    }
+  },
+  "estimated_usd": 0.3964250000000002,
+  "primary_by_version": {
+    "altered": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 432,
+      "altered_n": 432,
+      "reversions": 0
+    },
+    "original": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 0,
+      "altered_n": 0,
+      "reversions": 0
+    }
+  },
+  "absent_records": {
+    "correct": 340,
+    "n": 340
+  },
+  "paired_contrasts": {
+    "json_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "redwine_40_b0": 0.0,
+        "titanic_200_b1": 0.0,
+        "titanic_40_b0": 0.0,
+        "redwine_200_b1": 0.0,
+        "titanic_200_b0": 0.0,
+        "titanic_200_b2": 0.0,
+        "medical_40_b0": 0.0,
+        "medical_40_b2": 0.0,
+        "medical_200_b2": 0.0,
+        "redwine_40_b2": 0.0,
+        "redwine_200_b2": 0.0,
+        "medical_200_b1": 0.0,
+        "redwine_40_b1": 0.0,
+        "titanic_40_b1": 0.0,
+        "titanic_40_b2": 0.0,
+        "redwine_200_b0": 0.0,
+        "medical_200_b0": 0.0,
+        "medical_40_b1": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "xml_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "redwine_40_b0": 0.0,
+        "titanic_200_b1": 0.0,
+        "titanic_40_b0": 0.0,
+        "redwine_200_b1": 0.0,
+        "titanic_200_b0": 0.0,
+        "titanic_200_b2": 0.0,
+        "medical_40_b0": 0.0,
+        "medical_40_b2": 0.0,
+        "medical_200_b2": 0.0,
+        "redwine_40_b2": 0.0,
+        "redwine_200_b2": 0.0,
+        "medical_200_b1": 0.0,
+        "redwine_40_b1": 0.0,
+        "titanic_40_b1": 0.0,
+        "titanic_40_b2": 0.0,
+        "redwine_200_b0": 0.0,
+        "medical_200_b0": 0.0,
+        "medical_40_b1": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "txt_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "redwine_40_b0": 0.0,
+        "titanic_200_b1": 0.0,
+        "titanic_40_b0": 0.0,
+        "redwine_200_b1": 0.0,
+        "titanic_200_b0": 0.0,
+        "titanic_200_b2": 0.0,
+        "medical_40_b0": 0.0,
+        "medical_40_b2": 0.0,
+        "medical_200_b2": 0.0,
+        "redwine_40_b2": 0.0,
+        "redwine_200_b2": 0.0,
+        "medical_200_b1": 0.0,
+        "redwine_40_b1": 0.0,
+        "titanic_40_b1": 0.0,
+        "titanic_40_b2": 0.0,
+        "redwine_200_b0": 0.0,
+        "medical_200_b0": 0.0,
+        "medical_40_b1": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "named_minus_neutral": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "redwine_40_b0": 0.0,
+        "titanic_200_b1": 0.0,
+        "titanic_40_b0": 0.0,
+        "redwine_200_b1": 0.0,
+        "titanic_200_b0": 0.0,
+        "titanic_200_b2": 0.0,
+        "medical_40_b0": 0.0,
+        "medical_40_b2": 0.0,
+        "medical_200_b2": 0.0,
+        "redwine_40_b2": 0.0,
+        "redwine_200_b2": 0.0,
+        "medical_200_b1": 0.0,
+        "redwine_40_b1": 0.0,
+        "titanic_40_b1": 0.0,
+        "titanic_40_b2": 0.0,
+        "redwine_200_b0": 0.0,
+        "medical_200_b0": 0.0,
+        "medical_40_b1": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "altered_minus_original": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "redwine_40_b0": 0.0,
+        "titanic_200_b1": 0.0,
+        "titanic_40_b0": 0.0,
+        "redwine_200_b1": 0.0,
+        "titanic_200_b0": 0.0,
+        "titanic_200_b2": 0.0,
+        "medical_40_b0": 0.0,
+        "medical_40_b2": 0.0,
+        "medical_200_b2": 0.0,
+        "redwine_40_b2": 0.0,
+        "redwine_200_b2": 0.0,
+        "medical_200_b1": 0.0,
+        "redwine_40_b1": 0.0,
+        "titanic_40_b1": 0.0,
+        "titanic_40_b2": 0.0,
+        "redwine_200_b0": 0.0,
+        "medical_200_b0": 0.0,
+        "medical_40_b1": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    }
+  }
+}

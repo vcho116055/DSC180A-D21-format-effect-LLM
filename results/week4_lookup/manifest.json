@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-21T19:20:25.462327+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "seed": 18020261021,
+  "tools": [],
+  "store": false,
+  "temperature": "provider default; not set",
+  "requests": 358,
+  "stages": {
+    "main": 288,
+    "synthetic": 24,
+    "stress": 16,
+    "arithmetic": 12,
+    "repeat": 12,
+    "prior": 6
+  },
+  "plan_sha256": "0b27c3f9d1a34f5443e6cb03d3e856ea8756b34871ea2304f6a30b6248ea6503",
+  "source_sha256": {
+    "titanic": "5c3c684032fa169dcc8b4853e06a9a5296fbb2f1b8061a5527710c418f5feac4",
+    "redwine": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+    "medical": "388eff679557d08ac19f463d025de5e0b4adc482537c8456d19934d78621fd47"
+  },
+  "reservation_upper_bound_usd": 4.011285,
+  "budget_usd": 4.25,
+  "input_rate_per_million": 0.2,
+  "output_rate_per_million": 1.2,
+  "python": "3.11.6",
+  "note": "Exploratory plan frozen locally before responses, not public preregistration."
+}

@@ -236,3 +236,28 @@ data/*
 
 # Trial payloads embed dataset rows; review provenance before publishing.
 results/**/trials.jsonl
+
+# Personal chat archives and class-facing notes stay in the personal repository.
+DESKTOP-CONTEXT.md
+LAPTOP-CONTEXT.md
+context-attachments/
+initial_findings.md
+week*_summary.md
+week*_presenter_notes.md
+
+# Week 4 row-level artifacts retained locally pending redistribution review.
+/results/week4_followup/cases.jsonl
+/results/week4_followup/trials.jsonl
+/results/week4_lookup/cases.jsonl
+/results/week4_lookup/scored_cells.csv
+/results/week4_lookup/trials.jsonl
+/results/week4_overview/REPORT.md
+/results/week4_selection/REPORT.md
+/results/week4_selection/analysis.json
+/results/week4_selection/audit.json
+/results/week4_selection/calibration_cases.jsonl
+/results/week4_selection/calibration_trials.jsonl
+/results/week4_selection/main_cases.jsonl
+/results/week4_selection/main_trials.jsonl
+/results/week4_selection/transport_attempt_01/calibration_trials.jsonl
+results/local_regeneration/

@@ -17,3 +17,7 @@ Only the **first 891 data rows**, in existing order, are used. The harness asser
 Sampling uses a dedicated random generator seeded with 1802026. After generating synthetic tables, it samples 100 retained rows, flips 20 sampled zero labels to one in a paired copy, and samples 802 retained rows. Changing row order or earlier random draws changes the resulting payloads even if aggregate counts match.
 
 Before redistribution, establish the source, preprocessing history, license/terms, attribution obligations, and permission to share derived row-level data. Before sending rows to an API, verify permission for that use as well. Do not publish this CSV or trial prompts while those questions remain unresolved. Historical `trials.jsonl` stays in the personal source repository because it embeds row-level projections; see the artifact review in the historical results folder.
+
+## Week 4 local inputs
+
+The Week 4 experiment code additionally expects `data/redwine.csv` and `data/medicalcost.csv`; neither file is transferred or committed here. The source hashes, column projections, and row assumptions are documented in [the methodology archive](../methodology/README.md) and the frozen run manifests. Their provenance remains unresolved, just as for the transformed Titanic file. Obtain the exact authorized files independently before source-hash auditing or new table generation. Existing saved-response analysis and payload integrity checks use the frozen artifacts rather than loading the full source datasets.

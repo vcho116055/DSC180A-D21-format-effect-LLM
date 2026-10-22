@@ -1,0 +1,263 @@
+{
+  "requests": 382,
+  "model": "gpt-5.6-luna",
+  "statuses": {
+    "completed": 376,
+    "incomplete": 6
+  },
+  "stages": {
+    "arithmetic": {
+      "requests": 12,
+      "completed": 12,
+      "whole_answer_correct": 9,
+      "target_values": 24,
+      "target_values_correct": 19,
+      "original_value_reversions": 0
+    },
+    "canonical_lookup": {
+      "requests": 16,
+      "completed": 16,
+      "whole_answer_correct": 16,
+      "target_values": 48,
+      "target_values_correct": 48,
+      "original_value_reversions": 0
+    },
+    "canonical_prior": {
+      "requests": 2,
+      "completed": 2,
+      "whole_answer_correct": 2,
+      "target_values": 6,
+      "target_values_correct": 6,
+      "original_value_reversions": 0
+    },
+    "main": {
+      "requests": 288,
+      "completed": 288,
+      "whole_answer_correct": 288,
+      "target_values": 864,
+      "target_values_correct": 864,
+      "original_value_reversions": 0
+    },
+    "prior": {
+      "requests": 6,
+      "completed": 0,
+      "whole_answer_correct": 0,
+      "target_values": 18,
+      "target_values_correct": 0,
+      "original_value_reversions": 0
+    },
+    "prior_repaired": {
+      "requests": 6,
+      "completed": 6,
+      "whole_answer_correct": 1,
+      "target_values": 18,
+      "target_values_correct": 5,
+      "original_value_reversions": 0
+    },
+    "repeat": {
+      "requests": 12,
+      "completed": 12,
+      "whole_answer_correct": 12,
+      "target_values": 36,
+      "target_values_correct": 36,
+      "original_value_reversions": 0
+    },
+    "stress": {
+      "requests": 16,
+      "completed": 16,
+      "whole_answer_correct": 16,
+      "target_values": 48,
+      "target_values_correct": 48,
+      "original_value_reversions": 0
+    },
+    "synthetic": {
+      "requests": 24,
+      "completed": 24,
+      "whole_answer_correct": 24,
+      "target_values": 72,
+      "target_values_correct": 72,
+      "original_value_reversions": 0
+    }
+  },
+  "no_table_by_dataset": {
+    "titanic": {
+      "n": 6,
+      "correct": 5,
+      "unknown": 0,
+      "other": 1
+    },
+    "redwine": {
+      "n": 6,
+      "correct": 0,
+      "unknown": 6,
+      "other": 0
+    },
+    "medical": {
+      "n": 6,
+      "correct": 0,
+      "unknown": 6,
+      "other": 0
+    }
+  },
+  "format_input_tokens": {
+    "csv": 2249.1,
+    "json": 4090.5,
+    "xml": 6361.8,
+    "txt": 4466.2
+  },
+  "arithmetic": [
+    {
+      "id": "arithmetic_synthetic_200_csv",
+      "expected": {
+        "n_rows": 200,
+        "n_positive": 86
+      },
+      "actual": {
+        "n_rows": 200,
+        "n_positive": 86
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_synthetic_200_json",
+      "expected": {
+        "n_rows": 200,
+        "n_positive": 86
+      },
+      "actual": {
+        "n_rows": 200,
+        "n_positive": 86
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_synthetic_40_csv",
+      "expected": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "actual": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_synthetic_40_json",
+      "expected": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "actual": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_synthetic_800_csv",
+      "expected": {
+        "n_rows": 800,
+        "n_positive": 313
+      },
+      "actual": {
+        "n_rows": 800,
+        "n_positive": 313
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_synthetic_800_json",
+      "expected": {
+        "n_rows": 800,
+        "n_positive": 313
+      },
+      "actual": {
+        "n_rows": 800,
+        "n_positive": 312
+      },
+      "correct": false
+    },
+    {
+      "id": "arithmetic_titanic_200_csv",
+      "expected": {
+        "n_rows": 200,
+        "n_positive": 82
+      },
+      "actual": {
+        "n_rows": 200,
+        "n_positive": 82
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_titanic_200_json",
+      "expected": {
+        "n_rows": 200,
+        "n_positive": 82
+      },
+      "actual": {
+        "n_rows": 200,
+        "n_positive": 82
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_titanic_40_csv",
+      "expected": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "actual": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_titanic_40_json",
+      "expected": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "actual": {
+        "n_rows": 40,
+        "n_positive": 17
+      },
+      "correct": true
+    },
+    {
+      "id": "arithmetic_titanic_800_csv",
+      "expected": {
+        "n_rows": 800,
+        "n_positive": 303
+      },
+      "actual": {
+        "n_rows": 891,
+        "n_positive": 342
+      },
+      "correct": false
+    },
+    {
+      "id": "arithmetic_titanic_800_json",
+      "expected": {
+        "n_rows": 800,
+        "n_positive": 303
+      },
+      "actual": {
+        "n_rows": 891,
+        "n_positive": 342
+      },
+      "correct": false
+    }
+  ],
+  "observed_estimated_usd": 0.4182698000000002,
+  "all_lookup": {
+    "requests": 356,
+    "correct_requests": 356,
+    "present_cells": 1068,
+    "correct_present_cells": 1068,
+    "absent_correct": 356,
+    "exact_output_schema": 356
+  }
+}
