@@ -6,6 +6,8 @@ For detailed retrospective documentation of every recorded round, including the 
 
 The later attribute-selection and two-table experiment uses `week4_selection.py`, its separate frozen protocol, `test_week4_selection.py`, and `results/week4_selection/`. After restoring the local-only frozen files, run `uv run --locked python -m experiments.week4_selection analyze` to analyze saved responses without API requests. Its calibration and secondary requests are separate from the original Week 4 primary comparison. See [Round 4 methodology](../methodology/round4_selection_and_joins.md) for details, including the documented transport restart.
 
+The same Round 2 lookup design is repeated on three new datasets (IBM HR attrition, avocado prices, credit card fraud) by `round2_newdata.py`, with its [protocol](round2_newdata_protocol.md), `test_round2_newdata.py`, and `results/round2_newdata/`. It was collected on October 25, 2026: all 340 requests completed for $0.42, and all 864 primary cells, 432 altered cells, and 340 absent IDs were correct, so every paired contrast is zero, as in Round 2. Run `uv run --locked python -m unittest experiments.test_round2_newdata -v` to check the plan and the spending cap offline, and `uv run --locked python -m experiments.round2_newdata analyze` to re-score saved responses (both need the local datasets or the git-ignored `cases.jsonl`). A new run needs a new `--directory`; runs stop at a $1.00 cap on actual cost, and the protocol describes what happens if it is reached.
+
 ## Files
 
 - `week4_protocol.md`: design written before response collection, definitions, controls, and limitations.

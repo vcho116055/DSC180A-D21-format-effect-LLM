@@ -261,3 +261,9 @@ week*_presenter_notes.md
 /results/week4_selection/main_trials.jsonl
 /results/week4_selection/transport_attempt_01/calibration_trials.jsonl
 results/local_regeneration/
+
+# Round 2 lookup on new datasets: frozen cases embed dataset rows.
+/results/round2_newdata/cases.jsonl
+/results/round2_newdata/scored_cells.csv
+/results/round2_newdata/partial/cases.jsonl
+/results/round2_newdata/partial/scored_cells.csv

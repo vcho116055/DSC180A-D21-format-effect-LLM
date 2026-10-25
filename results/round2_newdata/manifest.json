@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-25T23:08:26.770349+00:00",
+  "design": "Round 2 record lookup (week4_study.py) on new datasets",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "seed": 18020261025,
+  "tools": [],
+  "store": false,
+  "temperature": "provider default; not set",
+  "requests": 340,
+  "stages": {
+    "main": 288,
+    "stress": 16,
+    "synthetic": 24,
+    "repeat": 12
+  },
+  "plan_sha256": "9c504f70056dab5c464a0c778d602d41008f7f9168b8d786784d57ce76ded45c",
+  "source_sha256": {
+    "ibm": "a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659",
+    "avocado": "a608b8513343e063a3d7440d863f94a73f99084b3c24205cafb8d02792653cc9",
+    "creditcard": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  },
+  "budget_usd": 1.0,
+  "budget_rule": "Spending cap on actual estimated cost: a request is dispatched only if spent plus in-flight worst-case reservations plus its own worst case fit the cap.",
+  "worst_case_all_requests_usd": 4.7791635,
+  "expected_usd_at_round2_ratio": 0.4718396275243082,
+  "dispatch_order": "Primary blocks b0 of every stratum, then b1, then b2; then repeat, synthetic, stress. Seeded with 18020261026.",
+  "input_rate_per_million": 0.2,
+  "output_rate_per_million": 1.2,
+  "python": "3.12.14",
+  "note": "Exploratory plan frozen locally before responses, not public preregistration."
+}

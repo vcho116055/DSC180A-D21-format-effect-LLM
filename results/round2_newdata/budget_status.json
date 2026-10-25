@@ -1,0 +1,30 @@
+{
+  "updated_utc": "2026-10-25T23:12:41.138683+00:00",
+  "budget_usd": 1.0,
+  "spent_usd": 0.4164464000000002,
+  "stop_reason": null,
+  "recorded": 340,
+  "planned": 340,
+  "unsent": 0,
+  "complete_main_blocks": [
+    "avocado_200_b0",
+    "avocado_200_b1",
+    "avocado_200_b2",
+    "avocado_40_b0",
+    "avocado_40_b1",
+    "avocado_40_b2",
+    "creditcard_200_b0",
+    "creditcard_200_b1",
+    "creditcard_200_b2",
+    "creditcard_40_b0",
+    "creditcard_40_b1",
+    "creditcard_40_b2",
+    "ibm_200_b0",
+    "ibm_200_b1",
+    "ibm_200_b2",
+    "ibm_40_b0",
+    "ibm_40_b1",
+    "ibm_40_b2"
+  ],
+  "unsent_by_stage": {}
+}
