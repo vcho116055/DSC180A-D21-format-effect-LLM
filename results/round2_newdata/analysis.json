@@ -1,0 +1,289 @@
+{
+  "planned": 340,
+  "requests": 340,
+  "status": {
+    "completed": 340
+  },
+  "returned_models": [
+    "gpt-5.6-luna"
+  ],
+  "stages": {
+    "main": {
+      "requests": 288,
+      "all_correct": 288,
+      "cells": 864,
+      "correct": 864
+    },
+    "repeat": {
+      "requests": 12,
+      "all_correct": 12,
+      "cells": 36,
+      "correct": 36
+    },
+    "stress": {
+      "requests": 16,
+      "all_correct": 16,
+      "cells": 48,
+      "correct": 48
+    },
+    "synthetic": {
+      "requests": 24,
+      "all_correct": 24,
+      "cells": 72,
+      "correct": 72
+    }
+  },
+  "primary_by_format": {
+    "csv": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "json": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "txt": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    },
+    "xml": {
+      "correct": 216,
+      "n": 216,
+      "altered_correct": 108,
+      "altered_n": 108,
+      "reversions": 0
+    }
+  },
+  "primary_by_dataset": {
+    "avocado": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    },
+    "creditcard": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    },
+    "ibm": {
+      "correct": 288,
+      "n": 288,
+      "altered_correct": 144,
+      "altered_n": 144,
+      "reversions": 0
+    }
+  },
+  "primary_by_size": {
+    "40": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    },
+    "200": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    }
+  },
+  "primary_by_cue": {
+    "named": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    },
+    "neutral": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 216,
+      "altered_n": 216,
+      "reversions": 0
+    }
+  },
+  "estimated_usd": 0.4164464,
+  "primary_by_version": {
+    "altered": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 432,
+      "altered_n": 432,
+      "reversions": 0
+    },
+    "original": {
+      "correct": 432,
+      "n": 432,
+      "altered_correct": 0,
+      "altered_n": 0,
+      "reversions": 0
+    }
+  },
+  "absent_records": {
+    "correct": 340,
+    "n": 340
+  },
+  "paired_contrasts": {
+    "json_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "avocado_200_b0": 0.0,
+        "avocado_40_b0": 0.0,
+        "creditcard_200_b0": 0.0,
+        "creditcard_40_b0": 0.0,
+        "ibm_200_b0": 0.0,
+        "ibm_40_b0": 0.0,
+        "avocado_200_b1": 0.0,
+        "avocado_40_b1": 0.0,
+        "creditcard_200_b1": 0.0,
+        "creditcard_40_b1": 0.0,
+        "ibm_200_b1": 0.0,
+        "ibm_40_b1": 0.0,
+        "avocado_200_b2": 0.0,
+        "avocado_40_b2": 0.0,
+        "creditcard_200_b2": 0.0,
+        "creditcard_40_b2": 0.0,
+        "ibm_200_b2": 0.0,
+        "ibm_40_b2": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "xml_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "avocado_200_b0": 0.0,
+        "avocado_40_b0": 0.0,
+        "creditcard_200_b0": 0.0,
+        "creditcard_40_b0": 0.0,
+        "ibm_200_b0": 0.0,
+        "ibm_40_b0": 0.0,
+        "avocado_200_b1": 0.0,
+        "avocado_40_b1": 0.0,
+        "creditcard_200_b1": 0.0,
+        "creditcard_40_b1": 0.0,
+        "ibm_200_b1": 0.0,
+        "ibm_40_b1": 0.0,
+        "avocado_200_b2": 0.0,
+        "avocado_40_b2": 0.0,
+        "creditcard_200_b2": 0.0,
+        "creditcard_40_b2": 0.0,
+        "ibm_200_b2": 0.0,
+        "ibm_40_b2": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "txt_minus_csv": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "avocado_200_b0": 0.0,
+        "avocado_40_b0": 0.0,
+        "creditcard_200_b0": 0.0,
+        "creditcard_40_b0": 0.0,
+        "ibm_200_b0": 0.0,
+        "ibm_40_b0": 0.0,
+        "avocado_200_b1": 0.0,
+        "avocado_40_b1": 0.0,
+        "creditcard_200_b1": 0.0,
+        "creditcard_40_b1": 0.0,
+        "ibm_200_b1": 0.0,
+        "ibm_40_b1": 0.0,
+        "avocado_200_b2": 0.0,
+        "avocado_40_b2": 0.0,
+        "creditcard_200_b2": 0.0,
+        "creditcard_40_b2": 0.0,
+        "ibm_200_b2": 0.0,
+        "ibm_40_b2": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "named_minus_neutral": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "avocado_200_b0": 0.0,
+        "avocado_40_b0": 0.0,
+        "creditcard_200_b0": 0.0,
+        "creditcard_40_b0": 0.0,
+        "ibm_200_b0": 0.0,
+        "ibm_40_b0": 0.0,
+        "avocado_200_b1": 0.0,
+        "avocado_40_b1": 0.0,
+        "creditcard_200_b1": 0.0,
+        "creditcard_40_b1": 0.0,
+        "ibm_200_b1": 0.0,
+        "ibm_40_b1": 0.0,
+        "avocado_200_b2": 0.0,
+        "avocado_40_b2": 0.0,
+        "creditcard_200_b2": 0.0,
+        "creditcard_40_b2": 0.0,
+        "ibm_200_b2": 0.0,
+        "ibm_40_b2": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    },
+    "altered_minus_original": {
+      "difference_pp": 0.0,
+      "descriptive_bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "blocks": 18,
+      "block_differences": {
+        "avocado_200_b0": 0.0,
+        "avocado_40_b0": 0.0,
+        "creditcard_200_b0": 0.0,
+        "creditcard_40_b0": 0.0,
+        "ibm_200_b0": 0.0,
+        "ibm_40_b0": 0.0,
+        "avocado_200_b1": 0.0,
+        "avocado_40_b1": 0.0,
+        "creditcard_200_b1": 0.0,
+        "creditcard_40_b1": 0.0,
+        "ibm_200_b1": 0.0,
+        "ibm_40_b1": 0.0,
+        "avocado_200_b2": 0.0,
+        "avocado_40_b2": 0.0,
+        "creditcard_200_b2": 0.0,
+        "creditcard_40_b2": 0.0,
+        "ibm_200_b2": 0.0,
+        "ibm_40_b2": 0.0
+      },
+      "warning": "Small exploratory sample; overlapping source rows; intervals can degenerate at ceiling."
+    }
+  }
+}

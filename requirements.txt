@@ -5,3 +5,4 @@ openai==3.35.1
 python-dotenv==1.2.4
 numpy==2.4.2
 matplotlib==3.10.8
+pandas==3.0.6
