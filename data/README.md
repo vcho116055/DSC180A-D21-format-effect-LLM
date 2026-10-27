@@ -21,3 +21,7 @@ Before redistribution, establish the source, preprocessing history, license/term
 ## Week 4 local inputs
 
 The Week 4 experiment code additionally expects `data/redwine.csv` and `data/medicalcost.csv`; neither file is transferred or committed here. The source hashes, column projections, and row assumptions are documented in [the methodology archive](../methodology/README.md) and the frozen run manifests. Their provenance remains unresolved, just as for the transformed Titanic file. Obtain the exact authorized files independently before source-hash auditing or new table generation. Existing saved-response analysis and payload integrity checks use the frozen artifacts rather than loading the full source datasets.
+
+## New-dataset lookup inputs
+
+`experiments/round2_newdata.py` repeats the Round 2 lookup design on `data/IBM.csv`, `data/avocado.csv`, and `data/creditcard.csv`, also local only and ignored by Git. Their provenance is unverified, like the files above. The SHA-256 of each file used for the frozen plan is recorded in `results/round2_newdata/manifest.json`; columns used are listed in [the protocol](../experiments/round2_newdata_protocol.md).
