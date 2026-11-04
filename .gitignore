@@ -267,3 +267,9 @@ results/local_regeneration/
 /results/round2_newdata/scored_cells.csv
 /results/round2_newdata/partial/cases.jsonl
 /results/round2_newdata/partial/scored_cells.csv
+
+# Separate file-input feasibility pilot: local run artifacts.
+/results/file_input_pilot*/
+
+# Repeated study artifacts embed source rows and private API response IDs.
+/results/overall_replication*/

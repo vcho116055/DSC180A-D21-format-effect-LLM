@@ -1,0 +1,15 @@
+# Preserve the collected LF bytes of the new experiment implementations.
+/.gitattributes text eol=lf
+/experiments/overall_replication* text eol=lf
+/experiments/file_input_pilot* text eol=lf
+/experiments/analyze_overall_replication.py text eol=lf
+/experiments/analyze_file_precision.py text eol=lf
+/experiments/report_overall_patterns.py text eol=lf
+/experiments/export_overall_replication.py text eol=lf
+/experiments/test_overall_replication.py text eol=lf
+/experiments/test_file_input_pilot.py text eol=lf
+/experiments/test_export_overall_replication.py text eol=lf
+
+# Public export checksums use LF text bytes on every platform.
+/results/november_replication/** text eol=lf
+/results/november_replication/*.png -text

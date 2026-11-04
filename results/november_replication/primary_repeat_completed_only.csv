@@ -1,0 +1,4 @@
+task,unique_inputs,all_three_correct,mixed_correctness,all_three_wrong,different_parsed_answers
+attribute,576,546,23,7,25
+direct,575,574,1,0,1
+join,576,554,21,1,21

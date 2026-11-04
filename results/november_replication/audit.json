@@ -1,0 +1,22 @@
+{
+  "planned": 8376,
+  "recorded": 8376,
+  "complete": true,
+  "coverage_unique": true,
+  "source_payload_and_score_checks": true,
+  "returned_model": "gpt-5.6-luna",
+  "reasoning": "medium",
+  "calibration_passed": true,
+  "completed": 8373,
+  "file_uploads": 300,
+  "complete_matched_blocks": 95,
+  "planned_matched_blocks": 95,
+  "all_uploaded_files_deleted": true,
+  "api_failures": {
+    "429": 1,
+    "500": 2
+  },
+  "inherited_calibration_prefix_verified": true,
+  "source_snapshot_verified": true,
+  "calibration_note": "Technical gate adopted before main responses; initial strict development gate was 23/24."
+}

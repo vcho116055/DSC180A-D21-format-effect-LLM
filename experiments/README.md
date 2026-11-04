@@ -1,4 +1,27 @@
-# Week 4 experiments
+# Experiments
+
+## November 3–4 repeated three-task study
+
+The completed study is documented in [the frozen protocol](overall_replication_protocol.md) and [the explicit development-gate revision](overall_replication_v2_protocol.md). It recorded 8,376 attempts with GPT-5.6 Luna and medium reasoning, including three repetitions per non-calibration input. It covers all three query types, six datasets for direct lookup, and separate file-delivery, empirical-edit, synthetic, and 800-row diagnostic arms. Three API failures remain in the records; 8,373 responses completed. The original stopped calibration is preserved and its 24 records are inherited once, not additional independent calls.
+
+The reviewed [aggregate results and conclusion](../results/november_replication/README.md), [detailed report](../results/november_replication/REPORT.md), and five plots are committed under `results/november_replication/`. They can be read on a fresh clone without datasets, withheld logs, or an API key. The earlier notebook describes the historical aggregate studies and has not been extended to this study.
+
+Original artifacts remain locally under `results/overall_replication_20261103_v2/` and are ignored because they embed source rows and remote identifiers. The public [provenance](../results/november_replication/provenance.json) records original artifact hashes and actual runtime versions. The [publication review](../results/november_replication/PUBLICATION_REVIEW.json) identifies the allowlisted public artifacts. No source rows or credentials are included.
+
+Saved-response analysis makes no API calls:
+
+```powershell
+python -m experiments.overall_replication_v2 analyze
+python -m experiments.report_overall_patterns
+python -m experiments.analyze_file_precision
+python -m experiments.export_overall_replication
+```
+
+The precision analysis is a clearly labeled post-collection sensitivity; it leaves frozen scores unchanged. The export command verifies the sealed local files and publishes only an aggregate allowlist. These commands require the original local artifacts; the exported results alone cannot reconstruct response-level analyses. Primary inline comparisons did not establish a consistent format advantage. Actual CSV uploads showed a separate loss in exact fidelity and retrieval, partly attributable to tiny numeric differences in the returned answers; the provider/model mechanism remains unresolved. See the reports before generalizing the result.
+
+Do not dispatch another run into a completed directory. The runner skips logged IDs and blocks uncertain starts, but a fresh replication needs a separately frozen plan and output directory. `run` is the only action that sends paid model requests.
+
+## Week 4 studies
 
 The Week 4 study uses the discussion with Xiao as its starting point: record lookup is the primary task, four input formats are compared, and arithmetic is a secondary check. All model calls are made through the API with no tools or conversation history.
 

@@ -1,0 +1,143 @@
+{
+  "created_utc": "2026-11-04T06:15:29.293471+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "seed": 18020261104,
+  "max_output_tokens": 4096,
+  "tools": [],
+  "store": false,
+  "repeats": 3,
+  "planned": 8376,
+  "unique_cases": 2808,
+  "stages": {
+    "calibration": 24,
+    "primary": 5184,
+    "breadth": 1152,
+    "synthetic": 288,
+    "empirical": 432,
+    "stress": 432,
+    "file": 864
+  },
+  "data_sha256": {
+    "titanic": "5c3c684032fa169dcc8b4853e06a9a5296fbb2f1b8061a5527710c418f5feac4",
+    "redwine": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+    "medical": "388eff679557d08ac19f463d025de5e0b4adc482537c8456d19934d78621fd47",
+    "ibm": "a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659",
+    "avocado": "a608b8513343e063a3d7440d863f94a73f99084b3c24205cafb8d02792653cc9",
+    "creditcard": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  },
+  "protocol_revision": "technical_gate_before_main_responses",
+  "effective_gate": "completed + model + medium reasoning + exact keys + string outputs; accuracy retained",
+  "inherited_calibration": {
+    "directory": "overall_replication_20261103",
+    "requests": 24,
+    "strict_correct": 23,
+    "trials_sha256": "e4fc27637fb38644116e2922c1db076093a839cb7057bf3a2c07fbc472944d58",
+    "starts_sha256": "461d067d1439a166932e1953e4a14c359ab1f9f52a7ac28b236d30d0363e0529"
+  },
+  "pricing_checked": "2026-11-03",
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+  "file_inputs_source": "https://developers.openai.com/api/docs/guides/file-inputs",
+  "sources_sha256": {
+    "experiments/overall_replication.py": "606de39ea8e74d79c3919f6feb9a0a54e5a3b835975764398b847f2aabc1ccb1",
+    "experiments/week4_study.py": "45791e9726c4261beb136c752d850b5a9596d0f4bad17006e8458656cb5416fb",
+    "experiments/week4_selection.py": "e541f29153dd73512025c5c75c9c27bbe5a8f4903be99e4c4f2c87ea8aa09a3e",
+    "experiments/round2_newdata.py": "b2653ba9bddcc4ab4b20de154a2305919a2cde9983e3cf5a6b51c17b377ef46b",
+    "experiments/overall_replication_protocol.md": "076bbe7fab11f384562d7b419858ebf10547654ae8d7942e6d262d5f91445a91",
+    "pyproject.toml": "ac41707a620b1eaa3aa5acd2e95832bfda808ee535214cfea6dd6fc7ecfa5c76",
+    "uv.lock": "4533c801a32b54ffbfe74af1e790f127c818c337dd5d1496ceee51bdf96a9781",
+    "experiments/analyze_overall_replication.py": "0cb029df0ecd8929ea6590716297ce9451762b0dd4965874bad92dc9c45750fa",
+    "experiments/overall_replication_v2.py": "789abdae638be69e898de3b239f8a0c2d65b2e3f915a53a9991937c6e006e409",
+    "experiments/overall_replication_v2_protocol.md": "f1be5c581f0eac2f4617c375f6b4810d7771a3c75a89360d80cfb16eba3515b8"
+  },
+  "supplementary_analysis_sha256": {
+    "report_overall_patterns.py": "b21c38d0496de0d78559edf6558a8b13ccfafe607a458949e1ed7dde204a66c2",
+    "analyze_file_precision.py": "e2122d8c714400589b8a274d824a1bdc35e81573c0f1c6124dafa83c916476c4"
+  },
+  "withheld_original_artifacts_sha256": {
+    "trials.jsonl": "a6ca8b661e34601ea25d11bef60a1d686d3c5ccb52a1b87fdeddd8b9623a0766",
+    "started.jsonl": "3394d38799629d49d83c212e8765479064f9e33e9844d81de12503cd64e997b1",
+    "runtime.jsonl": "467f692ec3fbc002b9c7b1d404cf5d92171f9c0a9c64469436e25eabffd8100b",
+    "uploads.jsonl": "37a1d3f6de50df411b08c3e4e16904e31adae593e547c435005c81104561195c",
+    "cleanup.jsonl": "e5dc3822fd035496be9a3ab9b5c73f602e7cd68bc683d6df2a1d0ff95edcc5c3",
+    "manifest.json": "fdac764e2ff45657f7eee82fb64a76a203007bbf757d26fddc406e509aa2e6b3",
+    "cases.jsonl": "97ce9744cfaeea841371c37dc1ac381f4746351868353ea03cb09a08601c872d",
+    "requests.jsonl": "7e77422dfdcef2aa24ff45e2f9ed81d89b4ac386482f958f8ce48b6127072611",
+    "blocks.jsonl": "ef59e4dc5a1806de46298293636f7f83c039c85d92d51fe1cd3598fb0c1f7e6e",
+    "analysis.json": "f549173e3f6991fcade52781e156327f28157150ec2745153e6cbc30cc92f8b3",
+    "audit.json": "2715d07595f07f39440a7b70d1beb8b60b739adfda4e47838bc499ad8b51a075",
+    "scored_requests.csv": "f6fba2eacb499ca979c0b49025fec9de18b6c5e4043ad093224eba427d7f01cf",
+    "scored_cells.csv": "ec28c4f3957f705652bb3e684b1c99d66094eac477fb65e2463f8b91c4b1ef85",
+    "repeat_consistency.csv": "52c20fd29eee1f07d15bd42a901498d71e6d0d0a233af8281233cecaeab47387",
+    "file_precision_sensitivity.json": "83c00434ad8e0be763c13f6ccebd0e294e26f38c4690728062bbf07e343fcb2f",
+    "file_precision_sensitivity_requests.csv": "fb0d09708028863f83c3c69898b154c7cbf21de307301114a374fac699afa026",
+    "EXECUTIVE_SUMMARY.md": "49fa2fb46d89325ddd681ac80615aae48d51035625193ddc50fff9f84143ced3",
+    "CONCLUSIONS.md": "b1983412b63909fd86aace4e04927d495e55a783d5646e58b1aa50eb37679a2d",
+    "REPORT.md": "b54cfef433b6959dd8ee0dac8a07d5fcd9e89d5dbe73c4225eac67b844c9a10a",
+    "file_delivery_precision.png": "46ce8f2cd9fc2f33f553e5ad0b41918bb2652bb1f29318f349f9d3c6c8e20c51",
+    "present_vs_absent.png": "ab41539e383e1d6496f9ad826af682592d729325f676428b15f69e9c35607ead",
+    "primary_format_errors.png": "7e6005da12322b839dee39c888f29778d90dc7295a6c4b96196f77cf2abb07c7",
+    "repeat_consistency.png": "93cd70f2bfe1b7ffe34c98bfa73e49a5dcb0c39aab8fb94e22b3f78c1e57e69d",
+    "table_size_errors.png": "40611186004a70fccb3a334f989ae010c405d388b75cf6b83b68cad3b293a2d3"
+  },
+  "environment": [
+    {
+      "started_utc": "2026-11-04T06:13:24.681883+00:00",
+      "python": "3.11.6",
+      "implementation": "CPython",
+      "os": "Windows-10-10.0.26300-SP0",
+      "sdk": "2.54.0",
+      "workers": 8,
+      "git_head": "3cc8ff40cd35ca8d1a93538f24637563f48542a6",
+      "dirty": true,
+      "uv_lock_sha256": "4533c801a32b54ffbfe74af1e790f127c818c337dd5d1496ceee51bdf96a9781",
+      "environment_deviation": "Python 3.12.14 unavailable to installed uv; using recorded available runtime, same as file pilot.",
+      "relevant_distributions": {
+        "openai": "2.54.0",
+        "python-dotenv": "1.2.2",
+        "numpy": "2.4.2",
+        "pandas": "3.0.1",
+        "matplotlib": "3.10.8"
+      }
+    },
+    {
+      "started_utc": "2026-11-04T06:15:48.235113+00:00",
+      "python": "3.11.6",
+      "implementation": "CPython",
+      "os": "Windows-10-10.0.26300-SP0",
+      "sdk": "2.54.0",
+      "workers": 8,
+      "git_head": "3cc8ff40cd35ca8d1a93538f24637563f48542a6",
+      "dirty": true,
+      "uv_lock_sha256": "4533c801a32b54ffbfe74af1e790f127c818c337dd5d1496ceee51bdf96a9781",
+      "environment_deviation": "Python 3.12.14 unavailable to installed uv; using recorded available runtime, same as file pilot.",
+      "relevant_distributions": {
+        "openai": "2.54.0",
+        "python-dotenv": "1.2.2",
+        "numpy": "2.4.2",
+        "pandas": "3.0.1",
+        "matplotlib": "3.10.8"
+      }
+    },
+    {
+      "started_utc": "2026-11-04T06:19:53.365375+00:00",
+      "python": "3.11.6",
+      "implementation": "CPython",
+      "os": "Windows-10-10.0.26300-SP0",
+      "sdk": "2.54.0",
+      "workers": 2,
+      "git_head": "3cc8ff40cd35ca8d1a93538f24637563f48542a6",
+      "dirty": true,
+      "uv_lock_sha256": "4533c801a32b54ffbfe74af1e790f127c818c337dd5d1496ceee51bdf96a9781",
+      "environment_deviation": "Python 3.12.14 unavailable to installed uv; using recorded available runtime, same as file pilot.",
+      "relevant_distributions": {
+        "openai": "2.54.0",
+        "python-dotenv": "1.2.2",
+        "numpy": "2.4.2",
+        "pandas": "3.0.1",
+        "matplotlib": "3.10.8"
+      }
+    }
+  ],
+  "publication_note": "Hashes identify the original local artifacts. Original row-level payloads, responses, remote IDs, full package inventory, and chat/session notes are not published. Collection-time source/raw hashes describe their original bytes; restore the local source snapshots for exact audits where Git normalized legacy helper line endings. Public export hashes use LF text."
+}

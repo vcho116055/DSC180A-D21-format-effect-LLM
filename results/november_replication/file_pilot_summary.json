@@ -1,0 +1,42 @@
+{
+  "recorded": 24,
+  "maximum": 24,
+  "gate_passed": true,
+  "accounted_usd": 0.0061215,
+  "budget_usd": 1.0,
+  "stop_reason": "completed",
+  "by_condition": {
+    "xml/inline": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "xml/file": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "json/inline": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "csv/file": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "csv/inline": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "txt/file": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "json/file": {
+      "n": 3,
+      "strict_correct": 3
+    },
+    "txt/inline": {
+      "n": 3,
+      "strict_correct": 3
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "status": "post-collection sensitivity, not a replacement primary score",
+  "tolerance": "absolute finite Decimal difference <= 1e-12 for numeric values; strings/keys/status unchanged",
+  "totals": [
+    {
+      "delivery": "file",
+      "attempts": 864,
+      "completed": 862,
+      "exact_correct": 811,
+      "tolerant_correct": 828,
+      "precision_only_failures": 17
+    },
+    {
+      "delivery": "inline",
+      "attempts": 864,
+      "completed": 864,
+      "exact_correct": 862,
+      "tolerant_correct": 862,
+      "precision_only_failures": 0
+    }
+  ],
+  "contrasts": {
+    "exact_correct": {
+      "difference_pp": -5.902777777777777,
+      "blocks": 12,
+      "descriptive_95_pp": [
+        -8.217592592592592,
+        -3.587962962962963
+      ],
+      "family_adjusted_98_333_pp": [
+        -8.564814814814813,
+        -3.2407407407407405
+      ],
+      "zero_width": false,
+      "block_differences_pp": [
+        0.0,
+        0.0,
+        -1.388888888888884,
+        0.0,
+        0.0,
+        -12.5,
+        0.0,
+        -13.888888888888884,
+        -6.944444444444442,
+        -11.111111111111116,
+        -15.277777777777779,
+        -9.722222222222221
+      ]
+    },
+    "tolerant_correct": {
+      "difference_pp": -3.935185185185185,
+      "blocks": 12,
+      "descriptive_95_pp": [
+        -4.745370370370371,
+        -3.124999999999999
+      ],
+      "family_adjusted_98_333_pp": [
+        -4.976851851851852,
+        -2.8935185185185173
+      ],
+      "zero_width": false,
+      "block_differences_pp": [
+        0.0,
+        0.0,
+        -1.388888888888884,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.777777777777779,
+        -6.944444444444442,
+        -11.111111111111116,
+        -15.277777777777779,
+        -9.722222222222221
+      ]
+    }
+  },
+  "by_task_format": [
+    {
+      "delivery": "file",
+      "task": "attribute",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 52,
+      "tolerant_correct": 58,
+      "precision_only_failures": 6
+    },
+    {
+      "delivery": "file",
+      "task": "attribute",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 70,
+      "tolerant_correct": 70,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "attribute",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "attribute",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 71,
+      "exact_correct": 71,
+      "tolerant_correct": 71,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "direct",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 66,
+      "tolerant_correct": 71,
+      "precision_only_failures": 5
+    },
+    {
+      "delivery": "file",
+      "task": "direct",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "direct",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 71,
+      "exact_correct": 71,
+      "tolerant_correct": 71,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "direct",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "join",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 49,
+      "tolerant_correct": 55,
+      "precision_only_failures": 6
+    },
+    {
+      "delivery": "file",
+      "task": "join",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "join",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "file",
+      "task": "join",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "attribute",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 71,
+      "tolerant_correct": 71,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "attribute",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 71,
+      "tolerant_correct": 71,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "attribute",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "attribute",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "direct",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "direct",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "direct",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "direct",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "join",
+      "format": "csv",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "join",
+      "format": "json",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "join",
+      "format": "txt",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    },
+    {
+      "delivery": "inline",
+      "task": "join",
+      "format": "xml",
+      "attempts": 72,
+      "completed": 72,
+      "exact_correct": 72,
+      "tolerant_correct": 72,
+      "precision_only_failures": 0
+    }
+  ]
+}
