@@ -109,3 +109,7 @@ Historical GPT-6 Luna model identifiers, prices, and results remain unchanged in
 ## Publication review
 
 The historical report, metadata, and aggregate summary were reviewed for credentials and embedded source rows. No credentials were detected; these files contain no row-level dataset payloads. See [artifact review](results/luna_pilot_20261014T031651Z/ARTIFACT_REVIEW.md) for the withheld trial log and historical path note. Trial logs from future runs also embed dataset rows and are ignored by default; review every generated artifact before sharing it. Ignoring `data/` alone does not prevent redistribution through logs.
+
+## AI use
+
+All research ideas, including the research question and experimental design, came from the project members. Parts of the code were generated with Claude Code and reviewed by the team. See [AI_USE.md](AI_USE.md) for representative prompts and details.
