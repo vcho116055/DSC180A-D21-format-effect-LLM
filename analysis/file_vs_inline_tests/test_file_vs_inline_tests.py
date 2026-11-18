@@ -45,6 +45,25 @@ class DataTests(unittest.TestCase):
         expected = 100 * (totals['file']['exact_correct'] - totals['inline']['exact_correct']) / 864
         self.assertAlmostEqual(table.difference_pp.mean(), expected)
 
+    def test_tolerant_scoring_still_rejects(self):
+        # 6 tables differ under 1e-12 tolerance, all worse when uploaded: exact p = 2 / 2^6.
+        table, _, _, _ = fvi.load()
+        tol = fvi.analyze(table)['tolerant']
+        self.assertEqual(tol['nonzero'], 6)
+        self.assertEqual(tol['tables_file_better'], 0)
+        self.assertAlmostEqual(tol['sign_flip_p'], 2 / 2 ** 6)
+        self.assertLess(abs(tol['mean_difference_pp']), abs(table.difference_pp.mean()))
+
+    def test_by_format_export_matches_pooled_differences(self):
+        # Averaging the four per-format differences must give each table's published pooled difference.
+        table = fvi.load()[0]
+        _, tables = fvi.per_format()
+        strict = tables['exact_correct'].mean(axis=1)
+        tolerant = tables['tolerant_correct'].mean(axis=1)
+        for row in table.itertuples(index=False):
+            self.assertAlmostEqual(strict[row.block], row.difference_pp)
+            self.assertAlmostEqual(tolerant[row.block], row.tolerant_difference_pp)
+
 
 if __name__ == '__main__':
     unittest.main()

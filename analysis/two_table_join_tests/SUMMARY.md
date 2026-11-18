@@ -23,7 +23,7 @@ Round 4 (Oct 21, 48 requests per format) for context only; it has no per-table d
 ## Method
 
 - **Significance level:** alpha = 0.05, two-sided.
-- **Main hypothesis (chosen before running this script):** strict accuracy, omnibus test. Present-value and absent-record accuracy are secondary.
+- **Main hypothesis:** strict accuracy, omnibus test; present-value and absent-record accuracy are secondary. This designation was made for this analysis after earlier exploratory looks at the same data, so it is not a preregistered choice.
 - **Omnibus test (main):** within-table permutation test of the repeated-measures F statistic, 100,000 permutations; critical value = 95th percentile of the permutation null. The Friedman statistic is reported alongside.
 - **Classical comparison:** the same repeated-measures ANOVA with its p-value from the F distribution (F(3, 105), sphericity assumed), and the Friedman chi-square approximation (3 df). These assume normal residuals and equal variance of differences, which this data (mostly 100%, few nonzero tables) does not meet, so the permutation results are used for decisions.
 - **Pairwise tests:** all 6 pairs. Paired sign-flip permutation test on per-table differences (exact when at most 20 tables differ), Holm-adjusted within each outcome; this decides. Classical paired t-test (t(35), Holm-adjusted) shown for comparison. Pairwise results are follow-ups: interpret them only if the omnibus test rejects.
@@ -127,7 +127,7 @@ For each pair, H0: the mean per-table difference is 0. Differences are in percen
 
 - Exploratory: tests chosen after data collection. Earlier exploratory runs on the same data were seen before this analysis.
 - Three source datasets, overlapping source rows across tables, one model alias.
-- Output tokens are not tested: no published output-token data exists for this task (they are only in the raw November `trials.jsonl`, not on this machine).
+- Output tokens are not tested here; November output tokens for all three tasks are tested in `../november_token_tests/`.
 
 ## Files
 

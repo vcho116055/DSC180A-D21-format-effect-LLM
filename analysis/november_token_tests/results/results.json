@@ -1,0 +1,484 @@
+{
+ "status": "post-collection exploratory tests; no API calls",
+ "seed": 20261117,
+ "alpha": 0.05,
+ "source": "analysis/november_exports/output_tokens_by_table_task_format.csv",
+ "output_tokens": [
+  {
+   "scope": "pooled over tasks",
+   "tables": 36,
+   "format_means": {
+    "csv": 157.43287037037035,
+    "json": 133.60417037037038,
+    "xml": 131.01606388888888,
+    "txt": 129.42438240740734
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 62.50289869544256,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 2.649864019,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 71.63333333333334,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 7.8,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 36,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -23.828699999999998,
+     "bootstrap_95": [
+      -28.36432766203703,
+      -19.579355740740738
+     ],
+     "tables_b_higher": 1,
+     "tables_b_lower": 35,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 9.878079629638888,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -26.41680648148148,
+     "bootstrap_95": [
+      -30.276379537037034,
+      -22.953050185185187
+     ],
+     "tables_b_higher": 0,
+     "tables_b_lower": 36,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 10.259117592583333,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -28.008487962962967,
+     "bootstrap_95": [
+      -32.20231717592591,
+      -24.1635255324074
+     ],
+     "tables_b_higher": 0,
+     "tables_b_lower": 36,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 10.885026851861111,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -2.5881064814814807,
+     "bootstrap_95": [
+      -5.284108518518518,
+      0.09941532407407554
+     ],
+     "tables_b_higher": 13,
+     "tables_b_lower": 23,
+     "p_value": 0.10403447982760086,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 3.0911935185277777,
+     "holm_p_value": 0.20806895965520172,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": -4.179787962962962,
+     "bootstrap_95": [
+      -5.726120092592597,
+      -2.7114248842592596
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 30,
+     "p_value": 5.4999725001374995e-05,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 2.1998472222222225,
+     "holm_p_value": 0.000164999175004125,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": -1.591681481481482,
+     "bootstrap_95": [
+      -3.7706132870370417,
+      0.6020935648148114
+     ],
+     "tables_b_higher": 15,
+     "tables_b_lower": 21,
+     "p_value": 0.1986240068799656,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 2.3666537036944444,
+     "holm_p_value": 0.20806895965520172,
+     "reject_H0": false
+    }
+   ]
+  },
+  {
+   "scope": "direct",
+   "tables": 36,
+   "format_means": {
+    "csv": 91.89120277777778,
+    "json": 79.86805833333331,
+    "xml": 76.81902500000001,
+    "txt": 81.02777222222225
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 50.276993517074644,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 2.692075956,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 55.5,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 7.766666667,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 36,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -12.023144444444442,
+     "bootstrap_95": [
+      -14.363529652777778,
+      -9.668917708333332
+     ],
+     "tables_b_higher": 2,
+     "tables_b_lower": 34,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.671305555555556,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -15.072177777777776,
+     "bootstrap_95": [
+      -17.564948541666666,
+      -12.555917222222222
+     ],
+     "tables_b_higher": 2,
+     "tables_b_lower": 34,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 5.799044444444444,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -10.863430555555555,
+     "bootstrap_95": [
+      -12.250066041666667,
+      -9.462969375000002
+     ],
+     "tables_b_higher": 1,
+     "tables_b_lower": 35,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.006941666666666,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -3.049033333333333,
+     "bootstrap_95": [
+      -5.5516815277777765,
+      -0.5393133333333353
+     ],
+     "tables_b_higher": 16,
+     "tables_b_lower": 20,
+     "p_value": 0.05035474822625887,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 3.053661111111111,
+     "holm_p_value": 0.10070949645251774,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": 1.1597138888888874,
+     "bootstrap_95": [
+      -1.0787741666666688,
+      3.379619444444443
+     ],
+     "tables_b_higher": 21,
+     "tables_b_lower": 15,
+     "p_value": 0.3712831435842821,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 2.4930583333333334,
+     "holm_p_value": 0.3712831435842821,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": 4.208747222222221,
+     "bootstrap_95": [
+      2.2577539583333306,
+      6.261569444444443
+     ],
+     "tables_b_higher": 24,
+     "tables_b_lower": 12,
+     "p_value": 0.00029999850000749997,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 2.477275,
+     "holm_p_value": 0.0008999955000225,
+     "reject_H0": true
+    }
+   ]
+  },
+  {
+   "scope": "attribute",
+   "tables": 36,
+   "format_means": {
+    "csv": 181.18287500000002,
+    "json": 147.30092777777776,
+    "xml": 145.90278333333333,
+    "txt": 139.550925
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 42.98443999170862,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 2.637471987,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 68.56666666666666,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 7.766666667,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 36,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -33.88194722222222,
+     "bootstrap_95": [
+      -41.56042034722222,
+      -26.796241944444443
+     ],
+     "tables_b_higher": 2,
+     "tables_b_lower": 34,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 14.622680555555556,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -35.280091666666664,
+     "bootstrap_95": [
+      -44.720137083333334,
+      -26.714919930555563
+     ],
+     "tables_b_higher": 2,
+     "tables_b_lower": 34,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 15.988430555555555,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -41.631949999999996,
+     "bootstrap_95": [
+      -49.45851263888889,
+      -34.585660902777775
+     ],
+     "tables_b_higher": 0,
+     "tables_b_lower": 36,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 16.77085,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -1.3981444444444466,
+     "bootstrap_95": [
+      -5.898144583333334,
+      3.0671333333333326
+     ],
+     "tables_b_higher": 12,
+     "tables_b_lower": 24,
+     "p_value": 0.5973420132899335,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.967605555555555,
+     "holm_p_value": 0.5973420132899335,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": -7.750002777777777,
+     "bootstrap_95": [
+      -10.164402500000001,
+      -5.349481111111113
+     ],
+     "tables_b_higher": 7,
+     "tables_b_lower": 29,
+     "p_value": 1.4999925000374999e-05,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 3.708336111111111,
+     "holm_p_value": 4.4999775001124996e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": -6.351858333333332,
+     "bootstrap_95": [
+      -9.800985694444444,
+      -2.9490284027777762
+     ],
+     "tables_b_higher": 9,
+     "tables_b_lower": 27,
+     "p_value": 0.0008499957500212498,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.106486111111111,
+     "holm_p_value": 0.0016999915000424997,
+     "reject_H0": true
+    }
+   ]
+  },
+  {
+   "scope": "join",
+   "tables": 36,
+   "format_means": {
+    "csv": 199.22453333333337,
+    "json": 173.64352499999995,
+    "xml": 170.32638333333335,
+    "txt": 167.69445
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 30.281231674411984,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 2.631112553,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 57.3,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 7.766666667,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 36,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -25.581008333333337,
+     "bootstrap_95": [
+      -32.51643958333333,
+      -18.536975416666667
+     ],
+     "tables_b_higher": 4,
+     "tables_b_lower": 32,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 12.817141666666666,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -28.89815,
+     "bootstrap_95": [
+      -34.26163569444444,
+      -23.932866597222226
+     ],
+     "tables_b_higher": 3,
+     "tables_b_lower": 33,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 12.208344444444444,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -31.530083333333337,
+     "bootstrap_95": [
+      -37.14588277777778,
+      -25.895651458333337
+     ],
+     "tables_b_higher": 0,
+     "tables_b_lower": 36,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 13.673605555555556,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -3.3171416666666635,
+     "bootstrap_95": [
+      -8.263965902777773,
+      2.472387083333334
+     ],
+     "tables_b_higher": 11,
+     "tables_b_lower": 25,
+     "p_value": 0.2784636076819616,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 5.381947222222222,
+     "holm_p_value": 0.5569272153639232,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": -5.949075,
+     "bootstrap_95": [
+      -9.648202361111112,
+      -2.2568288888888914
+     ],
+     "tables_b_higher": 9,
+     "tables_b_lower": 27,
+     "p_value": 0.0043649781751091245,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.259258333333333,
+     "holm_p_value": 0.013094934525327374,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": -2.6319333333333366,
+     "bootstrap_95": [
+      -7.467643958333336,
+      1.6806824305555494
+     ],
+     "tables_b_higher": 17,
+     "tables_b_lower": 19,
+     "p_value": 0.33177834110829446,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.627311111111111,
+     "holm_p_value": 0.5569272153639232,
+     "reject_H0": false
+    }
+   ]
+  }
+ ]
+}

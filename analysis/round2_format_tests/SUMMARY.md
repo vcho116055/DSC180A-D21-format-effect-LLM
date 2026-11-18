@@ -14,7 +14,7 @@ Hypothesis tests of whether input format (CSV, JSON, XML, TXT) affects Luna (gpt
 ## Results at a glance
 
 - **Accuracy:** 0/576 errors. No test can compare formats; H0 cannot be rejected. Each format's per-request error rate is at most 2.06% (95% upper bound).
-- **Output tokens:** format matters (omnibus p < 0.0001). CSV produces the longest outputs (69.0 tokens on average), and JSON, XML and TXT are each significantly shorter, in both studies separately.
+- **Output tokens:** format matters (combined omnibus F permutation p < 0.0001). CSV produces the longest outputs (69.0 tokens on average). Formats significantly shorter than CSV (Holm p < 0.05): combined: JSON, XML, TXT; oct21: JSON, XML, TXT; oct25: JSON, XML.
 - **Input tokens:** not tested (fixed by serialization). Relative to CSV: json 1.71x, xml 2.59x, txt 1.86x.
 
 ## Test 1: accuracy by format
@@ -89,7 +89,7 @@ For each pair, H0: the mean per-table difference in output tokens is 0. H1: it i
 ## Interpretation
 
 - **Accuracy:** no format difference can be detected because Luna made no errors on this task. Harder tasks (Round 4, November study) are needed to compare accuracy.
-- **Output tokens:** CSV leads to longer outputs than every other format, in the combined data and in each study alone. Differences among JSON, XML and TXT are smaller and not consistent across studies. Since CSV prompts are also the shortest, CSV trades fewer input tokens for more reasoning.
+- **Output tokens:** CSV has the highest mean output tokens in every scope (combined, oct21, oct25). Formats significantly shorter than CSV (Holm p < 0.05): combined: JSON, XML, TXT; oct21: JSON, XML, TXT; oct25: JSON, XML. Significant differences among JSON, XML and TXT: combined: txt minus xml; oct21: none; oct25: none. Since CSV prompts are also the shortest, CSV appears to trade fewer input tokens for more output.
 - The reasoning-token explanation is an inference: the reasoning/answer split is recorded only in the local Oct 25 response log and was not tested here.
 
 ## Caveats

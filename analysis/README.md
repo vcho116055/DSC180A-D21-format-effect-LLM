@@ -24,7 +24,9 @@ The experiment scripts in `../experiments/` report descriptive block-bootstrap c
 | `attribute_selection_tests/` | Does input format affect accuracy on multi-attribute selection (November study, 36 tables)? | [SUMMARY.md](attribute_selection_tests/SUMMARY.md) |
 | `two_table_join_tests/` | Does input format affect accuracy on the two-table join task (November study, 36 tables)? Shares the attribute-selection code. | [SUMMARY.md](two_table_join_tests/SUMMARY.md) |
 | `direct_lookup_tests/` | Does input format affect accuracy on direct lookup (November study, 36 tables)? Adds error-rate bounds. Shares the attribute-selection code. | [SUMMARY.md](direct_lookup_tests/SUMMARY.md) |
-| `file_vs_inline_tests/` | Does uploading the table as a file change accuracy compared with pasting it inline (November file stage, 12 tables)? Test 1 implemented. | [SUMMARY.md](file_vs_inline_tests/SUMMARY.md) |
+| `file_vs_inline_tests/` | Does uploading the table as a file change accuracy compared with pasting it inline (November file stage, 12 tables)? Test 1 (pooled) and test 2 (each format separately). | [SUMMARY.md](file_vs_inline_tests/SUMMARY.md) |
+| `november_token_tests/` | Does input format affect output tokens in the November study (36 tables, three tasks)? Out-of-sample check of the Round 2 token result. | [SUMMARY.md](november_token_tests/SUMMARY.md) |
+| `november_exports/` | Not an analysis: per-table aggregates exported from the local raw November run, used by the two analyses above. | [README.md](november_exports/README.md) |
 
 ## Data available for testing
 
@@ -33,6 +35,6 @@ The experiment scripts in `../experiments/` report descriptive block-bootstrap c
 | Round 2 lookup, Oct 21 (`results/week4_lookup/`) | `scored_requests.csv` (358 requests), `analysis.json` (per-block differences, 18 blocks) | None (withheld) |
 | Round 2 new datasets, Oct 25 (`results/round2_newdata/`) | `scored_requests.csv` (340 requests), `analysis.json` (18 blocks) | `cases.jsonl`, `trials.jsonl`, `scored_cells.csv` |
 | Round 4 selection and joins (`results/week4_selection/`) | `summary.json` (aggregates, 12-block contrasts) | None (withheld) |
-| November repeated study (`results/november_replication/`) | `analysis.json` (per-block differences, 36 primary / 12 file blocks), summary CSVs | None (raw run not on this machine) |
+| November repeated study (`results/november_replication/`) | `analysis.json` (per-block differences, 36 primary / 12 file blocks), summary CSVs; per-table output tokens and per-format file-vs-inline counts in `analysis/november_exports/` | `results/overall_replication_20261103_v2/` (one team member's machine) |
 
 The two Round 2 `scored_requests.csv` files share identical columns and design and can be stacked; their primary comparisons were 100% correct, so accuracy tests have no variation to detect.

@@ -1,6 +1,6 @@
 {
  "status": "post-collection exploratory test; no API calls",
- "test": "candidate test 1",
+ "tests": "test 1 (pooled) and test 2 (by format)",
  "seed": 20261117,
  "alpha": 0.05,
  "source": "results/november_replication/analysis.json: file/strict_correct/minus_inline_uniform",
@@ -40,6 +40,16 @@
    "p_value": 0.007589657043370141,
    "critical_value": 2.2009851600916397,
    "reject_H0": true
+  },
+  "tolerant": {
+   "mean_difference_pp": -3.935185185185185,
+   "tables_file_worse": 6,
+   "tables_file_better": 0,
+   "nonzero": 6,
+   "sign_flip_p": 0.03125,
+   "wilcoxon_p": 0.03125,
+   "paired_t_p": 0.0287821995939898,
+   "reject_H0": true
   }
  },
  "totals": {
@@ -59,5 +69,101 @@
    "tolerant_correct": 862,
    "precision_only_failures": 0
   }
+ },
+ "tolerant_source": "results/november_replication/file_precision_sensitivity.json: tolerant_correct",
+ "by_format_source": "analysis/november_exports/file_vs_inline_by_table_format.csv",
+ "by_format": {
+  "exact_correct": [
+   {
+    "format": "csv",
+    "mean_difference_pp": -22.222222222222218,
+    "tables_file_worse": 6,
+    "tables_file_better": 0,
+    "nonzero": 6,
+    "p_value": 0.03125,
+    "method": "exact (64 sign assignments)",
+    "holm_p_value": 0.125,
+    "reject_H0": false
+   },
+   {
+    "format": "json",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 1,
+    "nonzero": 2,
+    "p_value": 1.0,
+    "method": "exact (4 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   },
+   {
+    "format": "xml",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 0,
+    "nonzero": 1,
+    "p_value": 1.0,
+    "method": "exact (2 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   },
+   {
+    "format": "txt",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 0,
+    "nonzero": 1,
+    "p_value": 1.0,
+    "method": "exact (2 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   }
+  ],
+  "tolerant_correct": [
+   {
+    "format": "csv",
+    "mean_difference_pp": -14.35185185185185,
+    "tables_file_worse": 5,
+    "tables_file_better": 0,
+    "nonzero": 5,
+    "p_value": 0.0625,
+    "method": "exact (32 sign assignments)",
+    "holm_p_value": 0.25,
+    "reject_H0": false
+   },
+   {
+    "format": "json",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 1,
+    "nonzero": 2,
+    "p_value": 1.0,
+    "method": "exact (4 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   },
+   {
+    "format": "xml",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 0,
+    "nonzero": 1,
+    "p_value": 1.0,
+    "method": "exact (2 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   },
+   {
+    "format": "txt",
+    "mean_difference_pp": -0.4629629629629631,
+    "tables_file_worse": 1,
+    "tables_file_better": 0,
+    "nonzero": 1,
+    "p_value": 1.0,
+    "method": "exact (2 sign assignments)",
+    "holm_p_value": 1.0,
+    "reject_H0": false
+   }
+  ]
  }
 }

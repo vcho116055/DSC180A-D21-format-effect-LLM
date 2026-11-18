@@ -25,4 +25,4 @@ All inputs are published aggregates; nothing here calls the API or writes outsid
 | November breadth stage | `summary_task_format.csv` (stage `breadth`) | IBM, avocado, credit card: 1,152 direct-lookup requests, all correct; no per-table contrasts published | Context only |
 | Round 2 lookup studies | `results/week4_lookup/`, `results/round2_newdata/` | Same direct-lookup task, 576 primary requests, all correct | Tested separately in `../round2_format_tests/` |
 
-Round 4 did not include a direct-lookup task. Output tokens are not tested here; for direct lookup they are available only for Round 2 (see `../round2_format_tests/`).
+Round 4 did not include a direct-lookup task. Output tokens are not tested here; see `../round2_format_tests/` (Round 2) and `../november_token_tests/` (November, all three tasks).

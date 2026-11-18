@@ -10,6 +10,13 @@ H0: the mean per-table difference is 0 (delivery does not affect accuracy).
 H1: it is not 0. Two-sided, alpha = 0.05.
   Decides:  exact paired sign-flip permutation test.
   Checks:   exact Wilcoxon signed-rank test; classical paired t-test.
+  Sensitivity: the same three tests with numeric differences up to 1e-12 scored
+           as correct (published `tolerant_correct` contrast).
+
+Test 2 (by format): the same 12 tables, file minus inline difference computed separately
+for each format (18 matched calls per table, format and delivery), from the per-table
+export in ../november_exports/file_vs_inline_by_table_format.csv. Exact sign-flip test
+per format, Holm-adjusted across the 4 formats; strict and precision-tolerant scoring.
 
 Post-collection, exploratory; no API calls; writes only inside this folder.
 
@@ -23,7 +30,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from analysis.round2_format_tests.stat_tests import block_bootstrap_mean, critical_value, sign_flip_test
+from analysis.round2_format_tests.stat_tests import block_bootstrap_mean, critical_value, holm, sign_flip_test
 from analysis.attribute_selection_tests.classical_tests import paired_t
 
 HERE = Path(__file__).resolve().parent
@@ -31,6 +38,8 @@ ROOT = HERE.parents[1]
 NOV = ROOT / 'results/november_replication'
 OUT = HERE / 'results'
 CONTRAST = 'file/strict_correct/minus_inline_uniform'
+BY_FORMAT = ROOT / 'analysis/november_exports/file_vs_inline_by_table_format.csv'
+FORMATS = ('csv', 'json', 'xml', 'txt')
 ALPHA = 0.05
 SEED = 20261117
 
@@ -76,6 +85,7 @@ def load():
     # Cross-check against the independently written precision-sensitivity file.
     sensitivity = json.loads((NOV / 'file_precision_sensitivity.json').read_text(encoding='utf-8'))
     assert np.allclose(table.difference_pp, sensitivity['contrasts']['exact_correct']['block_differences_pp'])
+    table['tolerant_difference_pp'] = sensitivity['contrasts']['tolerant_correct']['block_differences_pp']
     totals = {r['delivery']: r for r in sensitivity['totals']}
     by_format = pd.read_csv(NOV / 'file_delivery_by_task_format.csv')
     return table, c, totals, by_format
@@ -97,7 +107,41 @@ def analyze(table):
         sign_flip=dict(p_value=flip['p_value'], method=flip['method'], nonzero=m,
                        critical_abs_mean_pp=flip['critical_abs_mean'], reject_H0=bool(flip['p_value'] < ALPHA)),
         wilcoxon=dict(wil, reject_H0=bool(wil['p_value'] < ALPHA)),
-        paired_t=dict(t, reject_H0=bool(t['p_value'] < ALPHA)))
+        paired_t=dict(t, reject_H0=bool(t['p_value'] < ALPHA)),
+        tolerant=tolerant_check(table.tolerant_difference_pp.to_numpy()))
+
+
+def tolerant_check(d):
+    """Same tests on the precision-tolerant differences (|numeric error| <= 1e-12 scored correct)."""
+    flip, wil, t = sign_flip_test(d, seed=SEED), wilcoxon_exact(d), paired_t(d)
+    return dict(mean_difference_pp=float(d.mean()), tables_file_worse=int((d < -1e-12).sum()),
+                tables_file_better=int((d > 1e-12).sum()), nonzero=flip['nonzero'],
+                sign_flip_p=flip['p_value'], wilcoxon_p=wil['p_value'], paired_t_p=t['p_value'],
+                reject_H0=bool(flip['p_value'] < ALPHA))
+
+
+def per_format():
+    """Test 2: file minus inline per table, separately for each format; Holm across formats."""
+    data = pd.read_csv(BY_FORMAT)
+    assert len(data) == 12 * 4 * 2 and (data.attempts == 18).all()
+    out, tables = {}, {}
+    for metric in ('exact_correct', 'tolerant_correct'):
+        wide = data.assign(pct=100 * data[metric] / data.attempts).pivot_table(
+            index=['block', 'format'], columns='delivery', values='pct')
+        diff = (wide['file'] - wide['inline']).unstack('format')[list(FORMATS)]
+        tables[metric] = diff
+        rows = []
+        for fmt in FORMATS:
+            d = diff[fmt].to_numpy()
+            flip = sign_flip_test(d, seed=SEED)
+            rows.append(dict(format=fmt, mean_difference_pp=float(d.mean()),
+                             tables_file_worse=int((d < -1e-12).sum()), tables_file_better=int((d > 1e-12).sum()),
+                             nonzero=flip['nonzero'], p_value=flip['p_value'], method=flip['method']))
+        for row, adj in zip(rows, holm([r['p_value'] for r in rows])):
+            row['holm_p_value'] = adj
+            row['reject_H0'] = bool(adj < ALPHA)
+        out[metric] = rows
+    return out, tables
 
 
 # ------------------------------------------------------------------- summary markdown
@@ -113,14 +157,15 @@ def dec(reject):
     return '**Reject H0**' if reject else 'Fail to reject H0'
 
 
-def summary(r, table, totals, by_format):
+def summary(r, table, totals, by_format, fmt_tests):
     f, i = totals['file'], totals['inline']
     s, w, t = r['sign_flip'], r['wilcoxon'], r['paired_t']
     ci = r['bootstrap_95_pp']
+    tol = r['tolerant']
     L = ['# File upload vs inline: does delivery affect accuracy?', '',
          'Hypothesis test of whether giving Luna (gpt-5.6-luna, medium reasoning) a table as an **uploaded file** '
-         'changes its accuracy, compared with **pasting the same table inline** in the prompt. Test 1 of the '
-         'candidate tests: strict accuracy, pooled over tasks and formats.', '',
+         'changes its accuracy, compared with **pasting the same table inline** in the prompt. Outcome: strict '
+         'accuracy, pooled over tasks and formats, with a precision-tolerant scoring sensitivity check.', '',
          '## Data', '',
          '- **November repeated study, file stage** (Nov 3-4): 12 tables (the first 2 primary tables per dataset '
          'and size: Titanic, red wine, medical x 80/400 rows).',
@@ -164,6 +209,17 @@ def summary(r, table, totals, by_format):
           f"{fp(w['p_value'])} | {dec(w['reject_H0'])} |",
           f"| Classical paired t-test, t({t['df']}) | t = {fv(t['t'])} | {fv(t['critical_value'])} | "
           f"{fp(t['p_value'])} | {dec(t['reject_H0'])} |", '',
+          '### Sensitivity: precision-tolerant scoring', '',
+          f"{f['precision_only_failures']} uploaded answers failed only by tiny numeric differences (about 1e-16). "
+          'Rescoring numeric differences up to 1e-12 as correct (published `tolerant_correct` contrast) and '
+          'rerunning the same tests:', '',
+          '| Scoring | Mean diff (pp) | Tables worse / better | Exact sign-flip p | Wilcoxon p | Paired t p | '
+          'Decision |', '| --- | --- | --- | --- | --- | --- | --- |',
+          f"| Strict (main) | {r['mean_difference_pp']:.2f} | {r['tables_file_worse']} / {r['tables_file_better']} | "
+          f"{fp(s['p_value'])} | {fp(w['p_value'])} | {fp(t['p_value'])} | {dec(s['reject_H0'])} |",
+          f"| Tolerant (1e-12) | {tol['mean_difference_pp']:.2f} | {tol['tables_file_worse']} / "
+          f"{tol['tables_file_better']} | {fp(tol['sign_flip_p'])} | {fp(tol['wilcoxon_p'])} | "
+          f"{fp(tol['paired_t_p'])} | {dec(tol['reject_H0'])} |", '',
           '## Conclusion', '',
           (f"{dec(s['reject_H0'])} (exact sign-flip p = {fp(s['p_value'])}). "
            + ('Uploading the table as a file lowered strict accuracy compared with pasting it inline: '
@@ -174,23 +230,48 @@ def summary(r, table, totals, by_format):
            + f"The Wilcoxon test (p = {fp(w['p_value'])}) and paired t-test (p = {fp(t['p_value'])}) "
            + ('agree. ' if w['reject_H0'] == s['reject_H0'] == t['reject_H0'] else 'do not all agree. ')
            + f"The p-value is the smallest this design allows ({r['smallest_attainable_p']:.4f}), so the evidence "
-             'is as strong as 12 tables can give, but limited by the number of tables, not by the size of the effect.'),
+             'is as strong as 12 tables can give, but limited by the number of tables, not by the size of the effect. '
+           + f"Under precision-tolerant scoring the drop shrinks to {abs(tol['mean_difference_pp']):.2f} pp and the "
+             f"exact sign-flip p rises to {fp(tol['sign_flip_p'])} ({tol['nonzero']} tables differ, all worse when "
+             'uploaded); ' + ('H0 is still rejected, so the effect is not explained by numeric precision alone.'
+                              if tol['reject_H0'] else 'H0 is no longer rejected at 0.05.')),
           '', '### Where the drop comes from (descriptive, not tested here)', '',
-          'Per-table data are published only pooled over formats, so the format breakdown below is totals only '
+          'Totals by task and format from the published summary (no test; test 2 below tests each format per table). '
           '(72 matched calls per cell). Almost all of the loss is CSV uploads.', '',
           '| Task | Format | Inline strict % | File strict % | File minus inline (pp) |',
           '| --- | --- | --- | --- | --- |']
     for row in by_format.itertuples(index=False):
         L.append(f'| {row.task} | {row.format} | {row.inline_strict_pct:.2f} | {row.file_strict_pct:.2f} | '
                  f'{row.file_minus_inline_pp:.2f} |')
-    L += ['', '## Caveats', '',
+    L += ['', '## Test 2: which formats are affected?', '',
+          'Same 12 tables, but the file-minus-inline difference is computed separately for each format: 18 matched '
+          'calls per table, format and delivery (3 tasks x original/altered x 3 repeats). Input: '
+          '`analysis/november_exports/file_vs_inline_by_table_format.csv`, per-table counts exported from the local '
+          'raw run. For each format, H0: the mean per-table difference is 0. Exact sign-flip test, Holm-adjusted '
+          'across the 4 formats within each scoring. With m tables that differ, the smallest attainable p is 2/2^m.', '',
+          '| Scoring | Format | Mean diff (pp) | Tables worse / better | Exact sign-flip p | Holm p | Decision |',
+          '| --- | --- | --- | --- | --- | --- | --- |']
+    for metric, label in (('exact_correct', 'Strict'), ('tolerant_correct', 'Tolerant (1e-12)')):
+        for row in fmt_tests[metric]:
+            L.append(f"| {label} | {row['format']} | {row['mean_difference_pp']:.2f} | {row['tables_file_worse']} / "
+                     f"{row['tables_file_better']} | {fp(row['p_value'])} | {fp(row['holm_p_value'])} | "
+                     f"{dec(row['reject_H0'])} |")
+    rejected = {m: [r['format'].upper() for r in rows if r['reject_H0']] for m, rows in fmt_tests.items()}
+    L += ['', 'Formats where uploading significantly changed accuracy: strict scoring: '
+          f"{', '.join(rejected['exact_correct']) or 'none'}; tolerant scoring: "
+          f"{', '.join(rejected['tolerant_correct']) or 'none'}. A format that does not reject may still have a "
+          'small effect: with few tables that differ, these tests have little power.', '',
+          '## Caveats', '',
           '- Exploratory: chosen after data collection; the direction of the effect was known before testing.',
+          '- The table-bootstrap 95% CI resamples within 6 dataset x size groups of only 2 tables each, which '
+          'understates variability (resampling 2 values from 2 roughly halves the variance), so the interval is too '
+          'narrow. The exact permutation p-values do not depend on it.',
           '- 12 tables from three datasets, overlapping source rows, one model alias. File repeats reused the same '
           'uploaded file IDs, so variation across re-uploads is not measured.',
           '- The comparison includes the provider\'s file processing: CSV uploads go through a spreadsheet path, '
           'other formats through text extraction. The test shows that delivery matters, not why.',
-          '- 17 file failures were only tiny numeric differences (about 1e-16). A rescoring allowing up to 1e-12 is '
-          'candidate test 2, not tested here.', '',
+          f"- {f['precision_only_failures']} file failures were only tiny numeric differences (about 1e-16); the "
+          'precision-tolerant sensitivity above shows how much of the effect they account for.', '',
           '## Files', '',
           '- `file_vs_inline_tests.py`: the analysis. Run from the repository root: '
           '`python -m analysis.file_vs_inline_tests.file_vs_inline_tests`. Reuses `sign_flip_test`, '
@@ -199,21 +280,27 @@ def summary(r, table, totals, by_format):
           '- `test_file_vs_inline_tests.py`: unit tests. Run: '
           '`python -m unittest analysis.file_vs_inline_tests.test_file_vs_inline_tests -v`',
           '- `results/results.json`: every number above; `results/strict_correct_differences_by_table.csv`: the '
-          '12 differences tested.', '']
+          '12 differences tested in test 1; `results/differences_by_table_format.csv`: the 12 x 4 differences '
+          'tested in test 2 (strict and tolerant).', '']
     return '\n'.join(L)
 
 
 def main():
     table, contrast, totals, by_format = load()
     result = analyze(table)
+    fmt_tests, fmt_tables = per_format()
     OUT.mkdir(parents=True, exist_ok=True)
+    pd.concat(fmt_tables, names=['scoring']).round(4).to_csv(OUT / 'differences_by_table_format.csv')
     table.to_csv(OUT / 'strict_correct_differences_by_table.csv', index=False)
     (OUT / 'results.json').write_text(json.dumps(dict(
-        status='post-collection exploratory test; no API calls', test='candidate test 1', seed=SEED, alpha=ALPHA,
+        status='post-collection exploratory test; no API calls', tests='test 1 (pooled) and test 2 (by format)', seed=SEED, alpha=ALPHA,
         source=f'results/november_replication/analysis.json: {CONTRAST}',
-        published_bootstrap_95_pp=contrast['descriptive_95_pp'], result=result, totals=totals),
+        published_bootstrap_95_pp=contrast['descriptive_95_pp'], result=result, totals=totals,
+        tolerant_source='results/november_replication/file_precision_sensitivity.json: tolerant_correct',
+        by_format_source='analysis/november_exports/file_vs_inline_by_table_format.csv',
+        by_format=fmt_tests),
         indent=1) + '\n', encoding='utf-8')
-    text = summary(result, table, totals, by_format)
+    text = summary(result, table, totals, by_format, fmt_tests)
     (HERE / 'SUMMARY.md').write_text(text, encoding='utf-8')
     print(text)
 

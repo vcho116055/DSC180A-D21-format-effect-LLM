@@ -185,6 +185,39 @@ def main():
     print(brief)
 
 
+def fmt_p_eq(p):
+    return '< 0.0001' if p < 1e-4 else f'= {p:.4f}'
+
+
+def _rejected(t, pair):
+    return next(p for p in t['pairwise'] if p['comparison'] == pair)
+
+
+def versus_csv(tokens):
+    """Which formats are significantly shorter than CSV (Holm), in each scope; generated from the results."""
+    parts = []
+    for t in tokens:
+        sig = [f.upper() for f in FORMATS[1:]
+               if _rejected(t, f'{f} minus csv')['reject_H0'] and _rejected(t, f'{f} minus csv')['mean_difference'] < 0]
+        parts.append(f"{t['scope']}: {', '.join(sig) if sig else 'none'}")
+    return 'Formats significantly shorter than CSV (Holm p < 0.05): ' + '; '.join(parts) + '.'
+
+
+def longest_note(tokens):
+    scopes = [t['scope'] for t in tokens if max(t['format_means'], key=t['format_means'].get) == 'csv']
+    if len(scopes) == len(tokens):
+        return f"CSV has the highest mean output tokens in every scope ({', '.join(scopes)})."
+    return f"CSV has the highest mean output tokens in: {', '.join(scopes) or 'no scope'}."
+
+
+def among_others(tokens):
+    parts = []
+    for t in tokens:
+        sig = [p['comparison'] for p in t['pairwise'] if 'csv' not in p['comparison'] and p['reject_H0']]
+        parts.append(f"{t['scope']}: {', '.join(sig) if sig else 'none'}")
+    return 'Significant differences among JSON, XML and TXT: ' + '; '.join(parts) + '.'
+
+
 def decision(reject):
     return '**Reject H0**' if reject else 'Fail to reject H0'
 
@@ -214,9 +247,9 @@ def summary(acc, tokens, overall_ratio):
          f"- **Accuracy:** {acc['total_errors']}/{acc['total_requests']} errors. No test can compare formats; "
          'H0 cannot be rejected. Each format\'s per-request error rate is at most '
          f"{acc['by_format']['csv']['upper95_error_rate_per_request']:.2%} (95% upper bound).",
-         f"- **Output tokens:** format matters (omnibus p < 0.0001). CSV produces the longest outputs "
-         f"({combined['format_means']['csv']:.1f} tokens on average), and JSON, XML and TXT are each significantly "
-         'shorter, in both studies separately.',
+         f"- **Output tokens:** format matters (combined omnibus F permutation "
+         f"p {fmt_p_eq(combined['omnibus']['rm_F']['p_value'])}). CSV produces the longest outputs "
+         f"({combined['format_means']['csv']:.1f} tokens on average). " + versus_csv(tokens),
          '- **Input tokens:** not tested (fixed by serialization). Relative to CSV: ' +
          ', '.join(f'{k} {v:.2f}x' for k, v in overall_ratio.items() if k != 'csv') + '.', '',
          '## Test 1: accuracy by format', '',
@@ -260,9 +293,8 @@ def summary(acc, tokens, overall_ratio):
     L += ['## Interpretation', '',
           '- **Accuracy:** no format difference can be detected because Luna made no errors on this task. '
           'Harder tasks (Round 4, November study) are needed to compare accuracy.',
-          '- **Output tokens:** CSV leads to longer outputs than every other format, in the combined data and in '
-          'each study alone. Differences among JSON, XML and TXT are smaller and not consistent across studies. '
-          'Since CSV prompts are also the shortest, CSV trades fewer input tokens for more reasoning.',
+          '- **Output tokens:** ' + longest_note(tokens) + ' ' + versus_csv(tokens) + ' ' + among_others(tokens)
+          + ' Since CSV prompts are also the shortest, CSV appears to trade fewer input tokens for more output.',
           '- The reasoning-token explanation is an inference: the reasoning/answer split is recorded only in the '
           'local Oct 25 response log and was not tested here.', '',
           '## Caveats', '',

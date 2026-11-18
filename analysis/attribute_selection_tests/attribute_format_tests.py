@@ -73,9 +73,8 @@ TASKS = {
                  'card; 1,152 requests) were 100% correct in every format. Round 2 is tested in '
                  '`../round2_format_tests/`.'),
         error_bounds=True,
-        tokens_note=('- Output tokens are not tested here: the November output tokens are only in the raw '
-                     '`trials.jsonl`, not on this machine. For direct lookup, output tokens are tested on the '
-                     'Round 2 data in `../round2_format_tests/` (format affects them; CSV is longest).'),
+        tokens_note=('- Output tokens are not tested here. November output tokens for all three tasks are tested in '
+                     '`../november_token_tests/`, and Round 2 output tokens in `../round2_format_tests/`.'),
         files=['- `direct_format_tests.py`: runs the analysis for the direct-lookup task. Run from the repository '
                'root: `python -m analysis.direct_lookup_tests.direct_format_tests`. The test code is shared with '
                '`../attribute_selection_tests/` (`attribute_format_tests.py`, `classical_tests.py`) and '
@@ -250,8 +249,9 @@ def summary(results, nov, r4, task='attribute', bounds=None):
     L += ['', context, '',
           '## Method', '',
           f'- **Significance level:** alpha = {ALPHA}, two-sided.',
-          '- **Main hypothesis (chosen before running this script):** strict accuracy, omnibus test. Present-value '
-          'and absent-record accuracy are secondary.',
+          '- **Main hypothesis:** strict accuracy, omnibus test; present-value and absent-record accuracy are '
+          'secondary. This designation was made for this analysis after earlier exploratory looks at the same data, '
+          'so it is not a preregistered choice.',
           '- **Omnibus test (main):** within-table permutation test of the repeated-measures F statistic, '
           '100,000 permutations; critical value = 95th percentile of the permutation null. The Friedman statistic '
           'is reported alongside.',
@@ -329,8 +329,8 @@ def summary(results, nov, r4, task='attribute', bounds=None):
           'before this analysis.',
           '- Three source datasets, overlapping source rows across tables, one model alias.',
           info.get('tokens_note',
-                   '- Output tokens are not tested: no published output-token data exists for this task (they are '
-                   'only in the raw November `trials.jsonl`, not on this machine).'), '',
+                   '- Output tokens are not tested here; November output tokens for all three tasks are tested '
+                   'in `../november_token_tests/`.'), '',
           '## Files', '',
           *info['files'],
           '- `results/results.json`: every number above; `results/<outcome>_by_table_format.csv`: the 36 x 4 '

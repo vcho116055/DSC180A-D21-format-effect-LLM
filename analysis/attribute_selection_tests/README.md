@@ -21,4 +21,4 @@ All inputs are published aggregates; nothing here calls the API or writes outsid
 | November study | `results/november_replication/primary_task_format_detail.csv` | Accuracy totals by format | Descriptive |
 | Round 4 | `results/week4_selection/summary.json` → `primary.attribute` | Totals per format (48 requests each); no per-table data for this task | Descriptive only |
 
-Output tokens are not tested: no published output-token data exists for this task. They are only in the raw November `trials.jsonl`, which is not on this machine.
+Output tokens are not tested here. November output tokens for all three tasks are tested in [../november_token_tests/](../november_token_tests/SUMMARY.md), from per-table means exported to `../november_exports/`.
