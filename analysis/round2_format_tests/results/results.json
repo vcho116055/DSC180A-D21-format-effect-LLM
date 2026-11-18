@@ -1,0 +1,439 @@
+{
+ "status": "post-collection exploratory tests; no API calls",
+ "seed": 20261117,
+ "sources": [
+  "results/week4_lookup/scored_requests.csv",
+  "results/round2_newdata/scored_requests.csv"
+ ],
+ "accuracy": {
+  "total_requests": 576,
+  "total_errors": 0,
+  "upper95_error_rate_pooled": 0.005187422697064403,
+  "by_format": {
+   "csv": {
+    "requests": 144,
+    "errors": 0,
+    "upper95_error_rate_per_request": 0.02058879229949584,
+    "tables": 36,
+    "tables_with_error": 0,
+    "upper95_share_of_tables_with_error": 0.07984650951989436
+   },
+   "json": {
+    "requests": 144,
+    "errors": 0,
+    "upper95_error_rate_per_request": 0.02058879229949584,
+    "tables": 36,
+    "tables_with_error": 0,
+    "upper95_share_of_tables_with_error": 0.07984650951989436
+   },
+   "xml": {
+    "requests": 144,
+    "errors": 0,
+    "upper95_error_rate_per_request": 0.02058879229949584,
+    "tables": 36,
+    "tables_with_error": 0,
+    "upper95_share_of_tables_with_error": 0.07984650951989436
+   },
+   "txt": {
+    "requests": 144,
+    "errors": 0,
+    "upper95_error_rate_per_request": 0.02058879229949584,
+    "tables": 36,
+    "tables_with_error": 0,
+    "upper95_share_of_tables_with_error": 0.07984650951989436
+   }
+  },
+  "discordant_pairs": {
+   "csv_vs_json": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   },
+   "csv_vs_xml": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   },
+   "csv_vs_txt": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   },
+   "json_vs_xml": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   },
+   "json_vs_txt": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   },
+   "xml_vs_txt": {
+    "only_a_correct": 0,
+    "only_b_correct": 0
+   }
+  },
+  "tests": "McNemar, chi-square, ANOVA and permutation tests are undefined or trivially p = 1 when no format produced an error; there are zero discordant pairs."
+ },
+ "output_tokens": [
+  {
+   "scope": "combined",
+   "tables": 36,
+   "format_means": {
+    "csv": 68.99305555555556,
+    "json": 58.63194444444444,
+    "xml": 54.923611111111114,
+    "txt": 60.520833333333336
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 16.53532646796972,
+     "p_value": 9.99990000099999e-06,
+     "critical_value": 2.691536325,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 22.069637883008358,
+     "p_value": 4.999950000499995e-05,
+     "critical_value": 7.763231198,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 36,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -10.36111111111111,
+     "bootstrap_95": [
+      -13.055555555555555,
+      -7.576388888888889
+     ],
+     "tables_b_higher": 9,
+     "tables_b_lower": 27,
+     "p_value": 9.999950000249999e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 5.180555555555555,
+     "holm_p_value": 4.9999750001249995e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -14.069444444444445,
+     "bootstrap_95": [
+      -17.26388888888889,
+      -10.944270833333336
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 30,
+     "p_value": 4.9999750001249995e-06,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 6.277777777777778,
+     "holm_p_value": 2.9999850000749997e-05,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -8.472222222222221,
+     "bootstrap_95": [
+      -11.771006944444444,
+      -5.125
+     ],
+     "tables_b_higher": 11,
+     "tables_b_lower": 25,
+     "p_value": 0.00017499912500437497,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.902777777777778,
+     "holm_p_value": 0.0006999965000174999,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -3.7083333333333335,
+     "bootstrap_95": [
+      -6.590277777777778,
+      -0.8819444444444444
+     ],
+     "tables_b_higher": 12,
+     "tables_b_lower": 23,
+     "p_value": 0.04382478087609562,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 3.625,
+     "holm_p_value": 0.08764956175219124,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": 1.8888888888888888,
+     "bootstrap_95": [
+      -1.3263888888888888,
+      5.118229166666664
+     ],
+     "tables_b_higher": 20,
+     "tables_b_lower": 16,
+     "p_value": 0.38513307433462834,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.152777777777778,
+     "holm_p_value": 0.38513307433462834,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": 5.597222222222222,
+     "bootstrap_95": [
+      2.6595486111111115,
+      8.493055555555555
+     ],
+     "tables_b_higher": 23,
+     "tables_b_lower": 13,
+     "p_value": 0.011909940450297748,
+     "method": "Monte Carlo (200000 draws)",
+     "critical_abs_mean_difference": 4.444444444444445,
+     "holm_p_value": 0.03572982135089324,
+     "reject_H0": true
+    }
+   ]
+  },
+  {
+   "scope": "oct21",
+   "tables": 18,
+   "format_means": {
+    "csv": 69.06944444444444,
+    "json": 55.44444444444444,
+    "xml": 51.208333333333336,
+    "txt": 58.44444444444444
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 11.824088942079971,
+     "p_value": 1.999980000199998e-05,
+     "critical_value": 2.785661836,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 15.4,
+     "p_value": 0.0008599914000859991,
+     "critical_value": 7.733333333,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 18,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -13.625,
+     "bootstrap_95": [
+      -18.26388888888889,
+      -8.63888888888889
+     ],
+     "tables_b_higher": 3,
+     "tables_b_lower": 15,
+     "p_value": 0.00087738037109375,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 8.76388888888889,
+     "holm_p_value": 0.00438690185546875,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -17.86111111111111,
+     "bootstrap_95": [
+      -23.180555555555557,
+      -12.722222222222221
+     ],
+     "tables_b_higher": 3,
+     "tables_b_lower": 15,
+     "p_value": 8.392333984375e-05,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 10.38888888888889,
+     "holm_p_value": 0.0005035400390625,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -10.625,
+     "bootstrap_95": [
+      -15.75,
+      -5.374652777777783
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 12,
+     "p_value": 0.00594329833984375,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 8.152777777777779,
+     "holm_p_value": 0.023773193359375,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -4.236111111111111,
+     "bootstrap_95": [
+      -8.625347222222222,
+      -0.08333333333333333
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 12,
+     "p_value": 0.122467041015625,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 5.291666666666667,
+     "holm_p_value": 0.24493408203125,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": 3.0,
+     "bootstrap_95": [
+      -1.8055555555555556,
+      7.7225694444444395
+     ],
+     "tables_b_higher": 11,
+     "tables_b_lower": 7,
+     "p_value": 0.35929107666015625,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 6.083333333333333,
+     "holm_p_value": 0.35929107666015625,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": 7.236111111111111,
+     "bootstrap_95": [
+      4.207986111111111,
+      10.125
+     ],
+     "tables_b_higher": 14,
+     "tables_b_lower": 4,
+     "p_value": 0.02492523193359375,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 6.402777777777778,
+     "holm_p_value": 0.07477569580078125,
+     "reject_H0": false
+    }
+   ]
+  },
+  {
+   "scope": "oct25",
+   "tables": 18,
+   "format_means": {
+    "csv": 68.91666666666667,
+    "json": 61.81944444444444,
+    "xml": 58.638888888888886,
+    "txt": 62.59722222222222
+   },
+   "omnibus": {
+    "rm_F": {
+     "statistic": 5.158861840677927,
+     "p_value": 0.0023299767002329975,
+     "critical_value": 2.74021752,
+     "reject_H0": true
+    },
+    "friedman_chi2": {
+     "statistic": 8.631284916201118,
+     "p_value": 0.03150968490315097,
+     "critical_value": 7.69273743,
+     "reject_H0": true
+    },
+    "permutations": 100000,
+    "blocks": 18,
+    "alpha": 0.05
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference": -7.097222222222222,
+     "bootstrap_95": [
+      -9.625,
+      -4.486111111111111
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 12,
+     "p_value": 0.00768280029296875,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 5.541666666666667,
+     "holm_p_value": 0.03841400146484375,
+     "reject_H0": true
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference": -10.277777777777779,
+     "bootstrap_95": [
+      -13.902777777777779,
+      -6.832986111111116
+     ],
+     "tables_b_higher": 3,
+     "tables_b_lower": 15,
+     "p_value": 0.0003204345703125,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 6.972222222222222,
+     "holm_p_value": 0.001922607421875,
+     "reject_H0": true
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference": -6.319444444444445,
+     "bootstrap_95": [
+      -10.277777777777779,
+      -2.1527777777777777
+     ],
+     "tables_b_higher": 5,
+     "tables_b_lower": 13,
+     "p_value": 0.01604461669921875,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 5.291666666666667,
+     "holm_p_value": 0.064178466796875,
+     "reject_H0": false
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference": -3.1805555555555554,
+     "bootstrap_95": [
+      -6.944444444444445,
+      0.4305555555555556
+     ],
+     "tables_b_higher": 6,
+     "tables_b_lower": 11,
+     "p_value": 0.2338104248046875,
+     "method": "exact (131072 sign assignments)",
+     "critical_abs_mean_difference": 4.513888888888889,
+     "holm_p_value": 0.6843109130859375,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference": 0.7777777777777778,
+     "bootstrap_95": [
+      -3.4027777777777777,
+      5.319791666666662
+     ],
+     "tables_b_higher": 9,
+     "tables_b_lower": 9,
+     "p_value": 0.8010940551757812,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 5.527777777777778,
+     "holm_p_value": 0.8010940551757812,
+     "reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference": 3.9583333333333335,
+     "bootstrap_95": [
+      -0.9861111111111112,
+      8.88888888888889
+     ],
+     "tables_b_higher": 9,
+     "tables_b_lower": 9,
+     "p_value": 0.2281036376953125,
+     "method": "exact (262144 sign assignments)",
+     "critical_abs_mean_difference": 6.069444444444445,
+     "holm_p_value": 0.6843109130859375,
+     "reject_H0": false
+    }
+   ]
+  }
+ ],
+ "input_token_ratio_to_csv": {
+  "csv": 1.0,
+  "json": 1.707,
+  "xml": 2.589,
+  "txt": 1.857
+ }
+}

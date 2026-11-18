@@ -1,0 +1,7 @@
+study,dataset,csv,json,xml,txt
+oct21,medical,1.0,1.85,2.819,1.872
+oct21,redwine,1.0,1.742,2.676,1.927
+oct21,titanic,1.0,1.892,3.089,2.263
+oct25,avocado,1.0,1.571,2.287,1.683
+oct25,creditcard,1.0,1.515,2.11,1.663
+oct25,ibm,1.0,1.852,3.013,2.005

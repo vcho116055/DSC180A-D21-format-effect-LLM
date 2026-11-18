@@ -1,0 +1,63 @@
+{
+ "status": "post-collection exploratory test; no API calls",
+ "test": "candidate test 1",
+ "seed": 20261117,
+ "alpha": 0.05,
+ "source": "results/november_replication/analysis.json: file/strict_correct/minus_inline_uniform",
+ "published_bootstrap_95_pp": [
+  -8.217592592592592,
+  -3.587962962962963
+ ],
+ "result": {
+  "tables": 12,
+  "mean_difference_pp": -5.902777777777778,
+  "bootstrap_95_pp": [
+   -8.101851851851851,
+   -3.5879629629629632
+  ],
+  "tables_file_worse": 7,
+  "tables_file_better": 0,
+  "tables_tied": 5,
+  "smallest_attainable_p": 0.015625,
+  "sign_flip": {
+   "p_value": 0.015625,
+   "method": "exact (128 sign assignments)",
+   "nonzero": 7,
+   "critical_abs_mean_pp": 4.745370370333333,
+   "reject_H0": true
+  },
+  "wilcoxon": {
+   "W_plus": 0.0,
+   "n_nonzero": 7,
+   "center": 14.0,
+   "p_value": 0.015625,
+   "critical_distance": 12.0,
+   "reject_H0": true
+  },
+  "paired_t": {
+   "t": -3.2606911879862785,
+   "df": 11,
+   "p_value": 0.007589657043370141,
+   "critical_value": 2.2009851600916397,
+   "reject_H0": true
+  }
+ },
+ "totals": {
+  "file": {
+   "delivery": "file",
+   "attempts": 864,
+   "completed": 862,
+   "exact_correct": 811,
+   "tolerant_correct": 828,
+   "precision_only_failures": 17
+  },
+  "inline": {
+   "delivery": "inline",
+   "attempts": 864,
+   "completed": 864,
+   "exact_correct": 862,
+   "tolerant_correct": 862,
+   "precision_only_failures": 0
+  }
+ }
+}

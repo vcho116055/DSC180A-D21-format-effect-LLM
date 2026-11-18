@@ -1,0 +1,13 @@
+block,difference_pp,dataset,n_rows
+core_medical_400_b0,0.0,medical,400
+core_medical_400_b1,0.0,medical,400
+core_medical_80_b0,-1.388888888888884,medical,80
+core_medical_80_b1,0.0,medical,80
+core_redwine_400_b0,0.0,redwine,400
+core_redwine_400_b1,-12.5,redwine,400
+core_redwine_80_b0,0.0,redwine,80
+core_redwine_80_b1,-13.888888888888884,redwine,80
+core_titanic_400_b0,-6.944444444444442,titanic,400
+core_titanic_400_b1,-11.111111111111116,titanic,400
+core_titanic_80_b0,-15.277777777777779,titanic,80
+core_titanic_80_b1,-9.722222222222221,titanic,80

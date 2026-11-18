@@ -1,0 +1,604 @@
+{
+ "status": "post-collection exploratory tests; no API calls",
+ "task": "direct",
+ "seed": 20261117,
+ "alpha": 0.05,
+ "main_outcome": "strict_correct",
+ "source": "results/november_replication/analysis.json",
+ "results": {
+  "strict_correct": {
+   "omnibus": {
+    "permutation_rm_F": {
+     "statistic": 0.6603773584905658,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "permutation_friedman": {
+     "statistic": 2.0,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "classical_rm_anova": {
+     "F": 0.6603773584905658,
+     "df1": 3,
+     "df2": 105,
+     "p_value": 0.5782450713595795,
+     "critical_value": 2.6911329009270477,
+     "reject_H0": false
+    },
+    "classical_friedman": {
+     "chi2": 2.0,
+     "df": 3,
+     "p_value": 0.5724067044708797,
+     "critical_value": 7.81472790325119,
+     "reject_H0": false
+    },
+    "permutations": 100000,
+    "tables": 36,
+    "tables_with_any_format_difference": 2
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference_pp": 0.2314814814814816,
+     "bootstrap_95_pp": [
+      0.0,
+      0.6944444444444449
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      -0.4629629629629633,
+      0.4629629629629633
+     ],
+     "tables_higher": 1,
+     "tables_lower": 1,
+     "tables_tied": 34,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (4 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 0.0,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference_pp": 0.2314814814814816,
+     "bootstrap_95_pp": [
+      0.0,
+      0.6944444444444449
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference_pp": -0.2314814814814816,
+     "bootstrap_95_pp": [
+      -0.6944444444444449,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 1,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": -1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      0.0,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 0,
+     "tables_tied": 36,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "all differences zero",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": null,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference_pp": 0.2314814814814816,
+     "bootstrap_95_pp": [
+      0.0,
+      0.6944444444444449
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    }
+   ]
+  },
+  "present_accuracy": {
+   "omnibus": {
+    "permutation_rm_F": {
+     "statistic": 0.795454545454546,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "permutation_friedman": {
+     "statistic": 2.0,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "classical_rm_anova": {
+     "F": 0.795454545454546,
+     "df1": 3,
+     "df2": 105,
+     "p_value": 0.4990894193233931,
+     "critical_value": 2.6911329009270477,
+     "reject_H0": false
+    },
+    "classical_friedman": {
+     "chi2": 2.0,
+     "df": 3,
+     "p_value": 0.5724067044708797,
+     "critical_value": 7.81472790325119,
+     "reject_H0": false
+    },
+    "permutations": 100000,
+    "tables": 36,
+    "tables_with_any_format_difference": 2
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference_pp": 0.07716049382716053,
+     "bootstrap_95_pp": [
+      0.0,
+      0.2314814814814816
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference_pp": -0.1543209876543211,
+     "bootstrap_95_pp": [
+      -0.6172839506172844,
+      0.15432098765432106
+     ],
+     "tables_higher": 1,
+     "tables_lower": 1,
+     "tables_tied": 34,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (4 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": -0.6271032028034079,
+     "t_df": 35,
+     "t_p": 0.5346613282915842,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference_pp": 0.07716049382716053,
+     "bootstrap_95_pp": [
+      0.0,
+      0.2314814814814816
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference_pp": -0.2314814814814816,
+     "bootstrap_95_pp": [
+      -0.6944444444444449,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 1,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": -1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      0.0,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 0,
+     "tables_tied": 36,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "all differences zero",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": null,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference_pp": 0.2314814814814816,
+     "bootstrap_95_pp": [
+      0.0,
+      0.6944444444444449
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    }
+   ]
+  },
+  "absent_accuracy": {
+   "omnibus": {
+    "permutation_rm_F": {
+     "statistic": 1.0000000000000007,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "permutation_friedman": {
+     "statistic": 3.0,
+     "critical_value": null,
+     "p_value": 1.0,
+     "reject_H0": false
+    },
+    "classical_rm_anova": {
+     "F": 1.0000000000000007,
+     "df1": 3,
+     "df2": 105,
+     "p_value": 0.395971922975229,
+     "critical_value": 2.6911329009270477,
+     "reject_H0": false
+    },
+    "classical_friedman": {
+     "chi2": 3.0,
+     "df": 3,
+     "p_value": 0.39162517627108884,
+     "critical_value": 7.81472790325119,
+     "reject_H0": false
+    },
+    "permutations": 100000,
+    "tables": 36,
+    "tables_with_any_format_difference": 1
+   },
+   "pairwise": [
+    {
+     "comparison": "json minus csv",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      0.0,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 0,
+     "tables_tied": 36,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "all differences zero",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": null,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus csv",
+     "mean_difference_pp": -0.2314814814814816,
+     "bootstrap_95_pp": [
+      -0.6944444444444449,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 1,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": -1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus csv",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      0.0,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 0,
+     "tables_tied": 36,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "all differences zero",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": null,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "xml minus json",
+     "mean_difference_pp": -0.2314814814814816,
+     "bootstrap_95_pp": [
+      -0.6944444444444449,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 1,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": -1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus json",
+     "mean_difference_pp": 0.0,
+     "bootstrap_95_pp": [
+      0.0,
+      0.0
+     ],
+     "tables_higher": 0,
+     "tables_lower": 0,
+     "tables_tied": 36,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "all differences zero",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": null,
+     "t_df": 35,
+     "t_p": 1.0,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    },
+    {
+     "comparison": "txt minus xml",
+     "mean_difference_pp": 0.2314814814814816,
+     "bootstrap_95_pp": [
+      0.0,
+      0.6944444444444449
+     ],
+     "tables_higher": 1,
+     "tables_lower": 0,
+     "tables_tied": 35,
+     "sign_flip_p": 1.0,
+     "sign_flip_method": "exact (2 sign assignments)",
+     "sign_flip_critical_abs_mean_pp": null,
+     "t": 1.0,
+     "t_df": 35,
+     "t_p": 0.3241743423860345,
+     "t_critical": 2.0301079282503465,
+     "sign_flip_holm_p": 1.0,
+     "reject_H0": false,
+     "t_holm_p": 1.0,
+     "t_reject_H0": false
+    }
+   ]
+  }
+ },
+ "observed_november": [
+  {
+   "format": "csv",
+   "n": 432,
+   "correct": 431,
+   "strict_pct": 99.76851851851852,
+   "present_correct": 1295,
+   "present_n": 1296,
+   "absent_correct": 432,
+   "absent_n": 432
+  },
+  {
+   "format": "json",
+   "n": 432,
+   "correct": 432,
+   "strict_pct": 100.0,
+   "present_correct": 1296,
+   "present_n": 1296,
+   "absent_correct": 432,
+   "absent_n": 432
+  },
+  {
+   "format": "xml",
+   "n": 432,
+   "correct": 431,
+   "strict_pct": 99.76851851851852,
+   "present_correct": 1293,
+   "present_n": 1296,
+   "absent_correct": 431,
+   "absent_n": 432
+  },
+  {
+   "format": "txt",
+   "n": 432,
+   "correct": 432,
+   "strict_pct": 100.0,
+   "present_correct": 1296,
+   "present_n": 1296,
+   "absent_correct": 432,
+   "absent_n": 432
+  }
+ ],
+ "round4_descriptive": null,
+ "error_rate_upper_bounds": [
+  {
+   "format": "csv",
+   "requests": 432,
+   "errors": 1,
+   "upper95": 0.010933699145489863,
+   "completed": 432,
+   "completed_errors": 1,
+   "completed_upper95": 0.010933699145489863
+  },
+  {
+   "format": "json",
+   "requests": 432,
+   "errors": 0,
+   "upper95": 0.006910576831304804,
+   "completed": 432,
+   "completed_errors": 0,
+   "completed_upper95": 0.006910576831304804
+  },
+  {
+   "format": "xml",
+   "requests": 432,
+   "errors": 1,
+   "upper95": 0.010933699145489863,
+   "completed": 431,
+   "completed_errors": 0,
+   "completed_upper95": 0.0069265549941812665
+  },
+  {
+   "format": "txt",
+   "requests": 432,
+   "errors": 0,
+   "upper95": 0.006910576831304804,
+   "completed": 432,
+   "completed_errors": 0,
+   "completed_upper95": 0.006910576831304804
+  },
+  {
+   "format": "all",
+   "requests": 1728,
+   "errors": 2,
+   "upper95": 0.0036388730012777985,
+   "completed": 1727,
+   "completed_errors": 1,
+   "completed_upper95": 0.0027439059899103113
+  }
+ ]
+}
