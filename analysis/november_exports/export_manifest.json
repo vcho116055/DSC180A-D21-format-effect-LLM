@@ -1,0 +1,17 @@
+{
+ "status": "per-table aggregates exported from the local raw November run; no table values, prompts, model outputs or remote identifiers",
+ "source_directory": "results/overall_replication_20261103_v2 (git-ignored, local only)",
+ "inputs_sha256": {
+  "scored_requests.csv": "f6fba2eacb499ca979c0b49025fec9de18b6c5e4043ad093224eba427d7f01cf",
+  "file_precision_sensitivity_requests.csv": "fb0d09708028863f83c3c69898b154c7cbf21de307301114a374fac699afa026"
+ },
+ "outputs": {
+  "output_tokens_by_table_task_format.csv": 432,
+  "file_vs_inline_by_table_format.csv": 96
+ },
+ "notes": [
+  "Output-token means use completed calls only; one primary call (core_titanic_80_b0, direct, xml) was an API error, so that cell averages 11 calls.",
+  "Output tokens include hidden reasoning tokens.",
+  "File-vs-inline counts pool 3 tasks x 2 versions x 3 repeats (18 calls) per table, format and delivery; tolerant_correct accepts numeric differences up to 1e-12, as in results/november_replication/file_precision_sensitivity.json."
+ ]
+}
